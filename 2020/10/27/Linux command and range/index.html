@@ -6,28 +6,39 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>配置安装 | 此间的少年</title>
+  <title>linux指令及靶场 | 此间的少年</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本次安装系统文件以及编译文件的过程遇到不少问题和疑惑，从最初的VM的安装，到java和pathon安装及环境变量的配置，再到虚拟机的系统安装，尤其安装虚拟机系统时多次出现登录黑屏，一次一次的重新创建，改变系统配置，终于正常打开，又经过一系列的文件安装，终于成功安装，完成任务过程中，借助网络来搜寻相关知识，防止过程卡顿尤为重要，无知不可怕，可怕的是不会利用外界知识去运用和学习，处于互联网大时代，">
+  <meta name="description" content="Centos7虚拟机安装：       linux基础指令1： 1#ls:显示当年目录下所有文件&#x2F;文件夹名称  1#ls 路径：显示指定路径下文件&#x2F;文件夹名称（&#x2F;表示根目录）  1#ls 选项(-la) 路径：显示文件&#x2F;文件夹名称，并以指定格式输出  1#ls 选项(-lh)路径：显示文件&#x2F;文件夹名称，以可读性强形式输出  ](https:&#x2F;&#x2F;i">
 <meta property="og:type" content="article">
-<meta property="og:title" content="配置安装">
-<meta property="og:url" content="http://example.com/2020/10/24/%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85/index.html">
+<meta property="og:title" content="linux指令及靶场">
+<meta property="og:url" content="http://example.com/2020/10/27/Linux%20command%20and%20range/index.html">
 <meta property="og:site_name" content="此间的少年">
-<meta property="og:description" content="本次安装系统文件以及编译文件的过程遇到不少问题和疑惑，从最初的VM的安装，到java和pathon安装及环境变量的配置，再到虚拟机的系统安装，尤其安装虚拟机系统时多次出现登录黑屏，一次一次的重新创建，改变系统配置，终于正常打开，又经过一系列的文件安装，终于成功安装，完成任务过程中，借助网络来搜寻相关知识，防止过程卡顿尤为重要，无知不可怕，可怕的是不会利用外界知识去运用和学习，处于互联网大时代，">
+<meta property="og:description" content="Centos7虚拟机安装：       linux基础指令1： 1#ls:显示当年目录下所有文件&#x2F;文件夹名称  1#ls 路径：显示指定路径下文件&#x2F;文件夹名称（&#x2F;表示根目录）  1#ls 选项(-la) 路径：显示文件&#x2F;文件夹名称，并以指定格式输出  1#ls 选项(-lh)路径：显示文件&#x2F;文件夹名称，以可读性强形式输出  ](https:&#x2F;&#x2F;i">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190727142655906.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjI0MDMz,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://s1.ax1x.com/2020/10/23/BEuuwQ.png">
-<meta property="og:image" content="https://s1.ax1x.com/2020/10/23/BEuneg.png">
-<meta property="og:image" content="https://s1.ax1x.com/2020/10/23/BEupee.png">
-<meta property="og:image" content="https://s1.ax1x.com/2020/10/23/BEu9dH.png">
-<meta property="og:image" content="https://s1.ax1x.com/2020/10/23/BEuKoj.png">
-<meta property="og:image" content="https://s1.ax1x.com/2020/10/24/BVv8s0.png">
-<meta property="og:image" content="https://s1.ax1x.com/2020/10/24/BZ1SPg.png">
-<meta property="article:published_time" content="2020-10-24T12:05:22.000Z">
-<meta property="article:modified_time" content="2020-10-30T02:19:16.957Z">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/27/Bl10YR.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/27/Bl1wk9.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/27/Bl1aTJ.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/27/Bl1Uw4.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/27/Bl1sl6.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/27/BlaqBt.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/27/BlabnI.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/27/BlaTcd.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/30/BYTGb4.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/30/BY776K.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/30/BYTaP1.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/30/BYTYVJ.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/30/BYTta9.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/28/B31nTe.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/28/B31KFH.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/30/BYT8rF.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/30/BYqqmT.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/30/BYqHXV.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/30/BYqO7F.png">
+<meta property="article:published_time" content="2020-10-27T13:33:57.000Z">
+<meta property="article:modified_time" content="2020-10-31T09:03:01.380Z">
 <meta property="article:author" content="谢元浩">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190727142655906.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjI0MDMz,size_16,color_FFFFFF,t_70">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/10/27/Bl10YR.png">
   
     <link rel="alternative" href="/atom.xml" title="此间的少年" type="application/atom+xml">
   
@@ -175,20 +186,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-配置安装" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Linux command and range" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      配置安装
+      linux指令及靶场
     </h1>
   
 
         
-        <a href="/2020/10/24/%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85/" class="archive-article-date">
-  	<time datetime="2020-10-24T12:05:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-24</time>
+        <a href="/2020/10/27/Linux%20command%20and%20range/" class="archive-article-date">
+  	<time datetime="2020-10-27T13:33:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-27</time>
 </a>
         
       </header>
@@ -196,16 +207,94 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<p> 本次安装系统文件以及编译文件的过程遇到不少问题和疑惑，从最初的VM的安装，到java和pathon安装及环境变量的配置，再到虚拟机的系统安装，尤其安装虚拟机系统时多次出现登录黑屏，一次一次的重新创建，改变系统配置，终于正常打开，又经过一系列的文件安装，终于成功安装，完成任务过程中，借助网络来搜寻相关知识，防止过程卡顿尤为重要，无知不可怕，可怕的是不会利用外界知识去运用和学习，处于互联网大时代，需要的不是我们去创造前人已创造的，而是在前人基础上掌握一定知识应用于新领域，重要的不是去创造，而是去实践和应用!</p>
-<img src="https://img-blog.csdnimg.cn/20190727142655906.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjI0MDMz,size_16,color_FFFFFF,t_70" alt="linux èææºå®è£è¿ç¨" style="zoom: 50%;" />
+<p><strong>Centos7虚拟机安装：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/Bl10YR"><img src="https://s1.ax1x.com/2020/10/27/Bl10YR.png" alt="Bl10YR.png" style="zoom:25%;" /></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/Bl1wk9"><img src="https://s1.ax1x.com/2020/10/27/Bl1wk9.png" alt="Bl1wk9.png" style="zoom:25%;" /></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/Bl1aTJ"><img src="https://s1.ax1x.com/2020/10/27/Bl1aTJ.png" alt="Bl1aTJ.png" style="zoom:25%;" /></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/Bl1Uw4"><img src="https://s1.ax1x.com/2020/10/27/Bl1Uw4.png" alt="Bl1Uw4.png" style="zoom:25%;" /></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/Bl1sl6"><img src="https://s1.ax1x.com/2020/10/27/Bl1sl6.png" alt="Bl1sl6.png" style="zoom:25%;" /></a></p>
+<hr>
+<p><strong>linux基础指令1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#ls:显示当年目录下所有文件&#x2F;文件夹名称</span><br></pre></td></tr></table></figure>
 
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BEuuwQ"><img src="https://s1.ax1x.com/2020/10/23/BEuuwQ.png" alt="BEuuwQ.png" style="zoom:25%;" /></a></p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BEuneg"><img src="https://s1.ax1x.com/2020/10/23/BEuneg.png" alt="BEuneg.png" style="zoom:25%;" /></a></p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BEupee"><img src="https://s1.ax1x.com/2020/10/23/BEupee.png" alt="BEupee.png" style="zoom:25%;" /></a></p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BEu9dH"><img src="https://s1.ax1x.com/2020/10/23/BEu9dH.png" alt="BEu9dH.png" style="zoom:25%;" /></a></p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BEuKoj"><img src="https://s1.ax1x.com/2020/10/23/BEuKoj.png" alt="BEuKoj.png" style="zoom:25%;" /></a></p>
-<p>![](<a target="_blank" rel="noopener" href="https://imgchr.com/i/BVv8s0"><img src="https://s1.ax1x.com/2020/10/24/BVv8s0.png" alt="BVv8s0.png" style="zoom: 33%;" /></a></p>
-<p>[<img src="https://s1.ax1x.com/2020/10/24/BZ1SPg.png" alt="BZ1SPg.png" style="zoom:25%;" /></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#ls 路径：显示指定路径下文件&#x2F;文件夹名称（&#x2F;表示根目录）</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#ls 选项(-la) 路径：显示文件&#x2F;文件夹名称，并以指定格式输出</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#ls 选项(-lh)路径：显示文件&#x2F;文件夹名称，以可读性强形式输出</span><br></pre></td></tr></table></figure>
+
+<p>](<a target="_blank" rel="noopener" href="https://imgchr.com/i/Bla7jA">https://imgchr.com/i/Bla7jA</a>)<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/BlaqBt"><img src="https://s1.ax1x.com/2020/10/27/BlaqBt.png" alt="BlaqBt.png" style="zoom: 33%;" /></a><br><a target="_blank" rel="noopener" href="https://imgchr.com/i/BlabnI"><img src="https://s1.ax1x.com/2020/10/27/BlabnI.png" alt="BlabnI.png" style="zoom: 33%;" /></a><br><a target="_blank" rel="noopener" href="https://imgchr.com/i/BlaTcd"><img src="https://s1.ax1x.com/2020/10/27/BlaTcd.png" alt="BlaTcd.png" style="zoom: 33%;" /></a></p>
+<hr>
+<p><strong>linux基本指令2：</strong></p>
+<p>​        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#pwd:打印当前目录名称</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BYTGb4"><img src="https://s1.ax1x.com/2020/10/30/BYTGb4.png" alt="BYTGb4.png" style="zoom:67%;" /></a></p>
+<p><strong>linux基本指令3：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#cd ~路径:用于切换当前目录到指定路径下目录</span><br><span class="line">注：在linux中有一个特殊的符号&quot;~&quot;,表示当前用户的家目录</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BY776K"><img src="https://s1.ax1x.com/2020/10/30/BY776K.png" alt="BY776K.png" style="zoom: 67%;" /></a></p>
+<hr>
+<p><strong>linux基本指令4：</strong></p>
+<p>​    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1:#mkdir ~&#x2F;路径(在当前目录下或指定目录下创建目录，其中路径可以是文件夹名称也可以是包含名称的一个完整路径)</span><br><span class="line">2:#mkdir-p(当一次性创建多层不存在的目录的时候，添加-p参数，否则报错)</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BYTaP1"><img src="https://s1.ax1x.com/2020/10/30/BYTaP1.png" alt="BYTaP1.png" style="zoom:67%;" /></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BYTYVJ"><img src="https://s1.ax1x.com/2020/10/30/BYTYVJ.png" alt="BYTYVJ.png" style="zoom:50%;" /></a></p>
+<hr>
+<p><strong>linux基本指令5：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#touch 路径：创建文件</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BYTta9"><img src="https://s1.ax1x.com/2020/10/30/BYTta9.png" alt="BYTta9.png" style="zoom:50%;" /></a></p>
+<p><strong>linux基本指令6：</strong>     </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#cp 被复制的文件路径 复制到的文件路径</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/B31nTe"><img src="https://s1.ax1x.com/2020/10/28/B31nTe.png" alt="B31nTe.png"></a></p>
+<hr>
+<p><strong>linux基本指令7：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#mv 需要移动的文档路径 需要保存的位置路径(移动、重命名)</span><br><span class="line">注：在linux中重命名的命令也是mv，语法和移动语法一样</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/B31KFH"><img src="https://s1.ax1x.com/2020/10/28/B31KFH.png" alt="B31KFH.png"></a></p>
+<hr>
+<p><strong>linux基本指令8：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#rm 选项 需要移除的文档路径(移除&#x2F;删除文档)</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BYT8rF"><img src="https://s1.ax1x.com/2020/10/30/BYT8rF.png" alt="BYT8rF.png" style="zoom:67%;" /></a></p>
+<hr>
+<p><strong>linux基本指令9</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BYqqmT"><img src="https://s1.ax1x.com/2020/10/30/BYqqmT.png" alt="BYqqmT.png" style="zoom:50%;" /></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">指令：vim(vim是一款文本编译器)</span><br><span class="line">语法：#vim 文件路径（作用：打开一个文件，该文件可一不存在，也可以存在）</span><br><span class="line">注：退出时，在没有按下其他命令的时候，按下shilft＋英文冒号＋q，按下回车即可</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>linux基本指令10</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BYqHXV"><img src="https://s1.ax1x.com/2020/10/30/BYqHXV.png" alt="BYqHXV.png"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输出重定向(一般命令的输出都会显示在终端中，有些时候需要将一些命令的执行结果想要保存到文件中进行后续的分析&#x2F;统计，则这时候需要使用到的输出重定向技术)</span><br><span class="line">&gt;:覆盖输出，会覆盖掉原先的文件内容</span><br><span class="line">&gt;&gt;:追加输出，不会覆盖原始文件内容，会在原始内容末尾继续添加</span><br><span class="line">语法：#正常执行的指令&gt;&#x2F;&gt;&gt; 文件的路径</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>linux基本指令11</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat语法1：#cat 文件路径</span><br><span class="line">作用1：直接打开文件(不同于vim，vim打开后限定在文档里，cat可直接打开)</span><br><span class="line">cat语法2：#cat 待合并的文件路径1 待合并的文件路径2……n</span><br><span class="line">作用2：可以对文件进行合并</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BYqO7F"><img src="https://s1.ax1x.com/2020/10/30/BYqO7F.png" alt="BYqO7F.png" style="zoom:33%;" /></a></p>
+<hr>
+<p><strong>靶场</strong></p>
+<p>1：连接主机：<a target="_blank" rel="noopener" href="http://bandit.labs.overthewire.org/">http://Bandit.labs.overthewire.org</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入ssh bandit.labs.overtherwir.org:2220</span><br><span class="line">登录用户：bandit0，密码：bandit0</span><br></pre></td></tr></table></figure>
+
+<p>2：输入ls指令查看文件<strong>readname</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat指令打开**readname**文件获取密码</span><br></pre></td></tr></table></figure>
+
+<p>3：登录bandit1，输入获取的密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看**-**文件，通过cat .&#x2F;-读取密码</span><br></pre></td></tr></table></figure>
+
+<p>4：登录bandit2，输入密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件**spaces in this filename**并通过cat&quot;&quot;读取密码</span><br></pre></td></tr></table></figure>
+
+<p>5：登录bandit3，输入密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件发现**inhere**目录，通过cd指令进入**inhere**目录，并通过ls-la查看**inhere**目录，发现**hidden**文件，通过cat .  ..  .hidden读取密码</span><br></pre></td></tr></table></figure>
+
+<p>6：登录bandit4，输入密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件发现目录**inhere**，通过ls-al指令读取发现**file**文件，通过file .&#x2F;*读取file文件，发现-file07为text文件，通过cat读取-file07文件读取密码</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -285,7 +374,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/10/24/%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/10/27/Linux%20command%20and%20range/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -299,18 +388,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/10/27/linux%E6%8C%87%E4%BB%A4%E5%8F%8A%E9%9D%B6%E5%9C%BA/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          linux指令及靶场
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/10/17/%E4%B8%8D%E7%BB%8F%E4%B8%80%E7%95%AA%E5%AF%92%E5%BD%BB%E9%AA%A8%EF%BC%8C%E9%82%A3%E5%BE%97%E6%A2%85%E8%8A%B1%E6%89%91%E9%BC%BB%E9%A6%99/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">不经一番寒彻骨，那得梅花扑鼻香</div>
+    <a href="/2020/10/24/configuration%20setup/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">配置安装</div>
       <i class="icon-circle-right"></i>
     </a>
   
