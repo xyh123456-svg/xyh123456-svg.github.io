@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://s1.ax1x.com/2020/10/30/BYqHXV.png">
 <meta property="og:image" content="https://s1.ax1x.com/2020/10/30/BYqO7F.png">
 <meta property="article:published_time" content="2020-10-27T13:33:57.000Z">
-<meta property="article:modified_time" content="2020-10-31T08:44:55.519Z">
+<meta property="article:modified_time" content="2020-10-31T08:50:13.561Z">
 <meta property="article:author" content="谢元浩">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s1.ax1x.com/2020/10/27/Bl10YR.png">
@@ -278,18 +278,23 @@
 <hr>
 <p><strong>靶场</strong></p>
 <p>1：连接主机：<a target="_blank" rel="noopener" href="http://bandit.labs.overthewire.org/">http://Bandit.labs.overthewire.org</a></p>
-<p>​      输入ssh bandit.labs.overtherwir.org:2220</p>
-<p>​      登录用户：bandit0，密码：bandit0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入ssh bandit.labs.overtherwir.org:2220</span><br><span class="line">登录用户：bandit0，密码：bandit0</span><br></pre></td></tr></table></figure>
+
 <p>2：输入ls指令查看文件<strong>readname</strong></p>
-<p>​      cat指令打开<strong>readname</strong>文件获取密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat指令打开**readname**文件获取密码</span><br></pre></td></tr></table></figure>
+
 <p>3：登录bandit1，输入获取的密码</p>
-<p>​     ls查看**-**文件，通过cat ./-读取密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看**-**文件，通过cat .&#x2F;-读取密码</span><br></pre></td></tr></table></figure>
+
 <p>4：登录bandit2，输入密码</p>
-<p>​     ls查看文件<strong>spaces in this filename</strong>并通过cat””读取密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件**spaces in this filename**并通过cat&quot;&quot;读取密码</span><br></pre></td></tr></table></figure>
+
 <p>5：登录bandit3，输入密码</p>
-<p>​     ls查看文件发现<strong>inhere</strong>目录，通过cd指令进入<strong>inhere</strong>目录，并通过ls查看<strong>inhere</strong>目录，发现<strong>hidden</strong>文件，通过cat .  ..  .hidden读取密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件发现**inhere**目录，通过cd指令进入**inhere**目录，并通过ls-la查看**inhere**目录，发现**hidden**文件，通过cat .  ..  .hidden读取密码</span><br></pre></td></tr></table></figure>
+
 <p>6：登录bandit4，输入密码</p>
-<p>​    ls查看文件发现目录<strong>inhere</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件发现目录**inhere**</span><br></pre></td></tr></table></figure>
+
 
       
 
