@@ -261,19 +261,19 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入ssh bandit.labs.overtherwir.org:2220</span><br><span class="line">登录用户：bandit0，密码：bandit0</span><br></pre></td></tr></table></figure>
 
 <p>2：输入ls指令查看文件<strong>readname</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat指令打开**readname**文件获取密码</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat指令打开readname文件获取密码</span><br></pre></td></tr></table></figure>
 
 <p>3：登录bandit1，输入获取的密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看**-**文件，通过cat .&#x2F;-读取密码</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看-文件，通过cat .&#x2F;-读取密码</span><br></pre></td></tr></table></figure>
 
 <p>4：登录bandit2，输入密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件**spaces in this filename**并通过cat&quot;&quot;读取密码</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件spaces in this filename并通过cat&quot;&quot;读取密码</span><br></pre></td></tr></table></figure>
 
 <p>5：登录bandit3，输入密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件发现**inhere**目录，通过cd指令进入**inhere**目录，并通过ls-la查看**inhere**目录，发现**hidden**文件，通过cat .  ..  .hidden读取密码</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件发现inhere目录，通过cd指令进入inhere目录，并通过ls-la查看inhere目录，发现hidden文件，通过cat .  ..  .hidden读取密码</span><br></pre></td></tr></table></figure>
 
 <p>6：登录bandit4，输入密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件发现目录**inhere**，通过ls-al指令读取发现**file**文件，通过file .&#x2F;*读取file文件，发现-file07为text文件，通过cat读取-file07文件读取密码</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件发现目录inhere，通过ls-al指令读取发现file文件，通过file .&#x2F;*读取file文件，发现-file07为text文件，通过cat读取-file07文件读取密码</span><br></pre></td></tr></table></figure>
 
 
       
