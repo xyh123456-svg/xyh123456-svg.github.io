@@ -268,57 +268,43 @@
 <hr>
 <p><strong>linux进阶指令：</strong></p>
 <p><strong>1：</strong></p>
-<ul>
-<li><pre><code>#df查看磁盘空间（df-h以可读性较高的形式展示大小，保留单位）
-注：以第一行为基准，其余为系统预存空间
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">**2：**</span><br><span class="line"></span><br><span class="line">- &#96;&#96;&#96;</span><br><span class="line">  #free查看内存使用情况（free-m以一兆进制缩小输出，以兆单位进行查看，-g即为以1g进制缩小</span><br><span class="line">  注：以第二行为基准，包含已经被分配但没被用的</span><br><span class="line">  剩余的真实可用的内存为1665mb</span><br><span class="line">  Swap：用于临时内存，当系统真实内存不够用的时候可以临时使用磁盘空间来充当内存</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#df查看磁盘空间（df-h以可读性较高的形式展示大小，保留单位）</span><br><span class="line">注：以第一行为基准，其余为系统预存空间</span><br></pre></td></tr></table></figure>
 
-</code></pre>
-</li>
-</ul>
+
+<p><strong>2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#free查看内存使用情况（free-m以一兆进制缩小输出，以兆单位进行查看，-g即为以1g进制缩小</span><br><span class="line">注：以第二行为基准，包含已经被分配但没被用的</span><br><span class="line">剩余的真实可用的内存为1665mb</span><br><span class="line">Swap：用于临时内存，当系统真实内存不够用的时候可以临时使用磁盘空间来充当内存</span><br></pre></td></tr></table></figure>
+
+
 <p><strong>3：</strong></p>
-<ul>
-<li><pre><code>head指令（作用：查看一个文件的前n行，如果不指定n，则默认显示前10行）
-#head -n 文件路径 （n表示数字）
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">**4：**</span><br><span class="line"></span><br><span class="line">- &#96;&#96;&#96;</span><br><span class="line">  tail指令（作用：查看一个文件的末n行，如果不指定n，则默认显示后10行）</span><br><span class="line">  语法1：#tail -n 文件路径    n同样表示数字</span><br><span class="line">  作用2：可以通过tail指令来查看一个文件的动态变化（输入后保存即可改变）</span><br><span class="line">  语法：#tail -F 文件路径（tail-f变化内容不能手动加，系统自动定向）</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">head指令（作用：查看一个文件的前n行，如果不指定n，则默认显示前10行）</span><br><span class="line">#head -n 文件路径 （n表示数字）</span><br></pre></td></tr></table></figure>
 
-</code></pre>
-</li>
-</ul>
+
+<p><strong>4：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tail指令（作用：查看一个文件的末n行，如果不指定n，则默认显示后10行）</span><br><span class="line">语法1：#tail -n 文件路径    n同样表示数字</span><br><span class="line">作用2：可以通过tail指令来查看一个文件的动态变化（输入后保存即可改变）</span><br><span class="line">语法：#tail -F 文件路径（tail-f变化内容不能手动加，系统自动定向）</span><br></pre></td></tr></table></figure>
+
+
 <p><strong>5：</strong></p>
-<ul>
-<li><pre><code>less指令（作用：查看文件，以较少的内容进行输出，按下辅助功能键查看更多
-#less 需要查看的文件路径（辅助键包括数字+回车，空格，上下方向键等）
-注：退出时按下q键即可
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">**6：**</span><br><span class="line"></span><br><span class="line">- &#96;&#96;&#96;</span><br><span class="line">  wc指令（作用：统计文件内容信息（包含行数.单词数.字符数））</span><br><span class="line">  语法: #wc -lwc 需要统计的文件路径</span><br><span class="line">  -l：表示lines，行数</span><br><span class="line">  -w：表示words，单词数</span><br><span class="line">  -c：表示bytes，字节数</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">less指令（作用：查看文件，以较少的内容进行输出，按下辅助功能键查看更多</span><br><span class="line">#less 需要查看的文件路径（辅助键包括数字+回车，空格，上下方向键等）</span><br><span class="line">注：退出时按下q键即可</span><br></pre></td></tr></table></figure>
 
-</code></pre>
-</li>
-</ul>
+
+<p><strong>6：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wc指令（作用：统计文件内容信息（包含行数.单词数.字符数））</span><br><span class="line">语法: #wc -lwc 需要统计的文件路径</span><br><span class="line">-l：表示lines，行数</span><br><span class="line">-w：表示words，单词数</span><br><span class="line">-c：表示bytes，字节数</span><br></pre></td></tr></table></figure>
+
+
 <p><strong>7：</strong></p>
-<ul>
-<li><pre><code>date指令（重点）
-作用：表示操作时间日期（读取当地时间、设置）
-语法1：#date   输出形式：2018年3月1日 星期 时间
-语法2：#date +%F  等价于（#date %Y-%m-%d)  输出形式：2018-03-01
-语法3：#date&quot;+%F %T&quot;在2的基础上具体显示时间（等价于#date &quot;+%Y-%m-%d-%H-%S&quot;)
-语法4：获取之前或者之后的某个时间（备份）
-#date -d&quot;-1 day&quot; +%Y-%m-%d-%H-%S(表示前一天时间，-1day/year表示向前推一天年，+向后推)
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">**8：**</span><br><span class="line"></span><br><span class="line">- &#96;&#96;&#96;</span><br><span class="line">  cal指令(作用：用来操作日历)</span><br><span class="line">  语法1：#cal(cal -1) 直接输出当前月份日历</span><br><span class="line">  语法2：#cal -3 输出上一个月，本月和下一个月的日历</span><br><span class="line">  语法3：#cal -y 年份 表示输出某一年份的日历</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">date指令（重点）</span><br><span class="line">作用：表示操作时间日期（读取当地时间、设置）</span><br><span class="line">语法1：#date   输出形式：2018年3月1日 星期 时间</span><br><span class="line">语法2：#date +%F  等价于（#date %Y-%m-%d)  输出形式：2018-03-01</span><br><span class="line">语法3：#date&quot;+%F %T&quot;在2的基础上具体显示时间（等价于#date &quot;+%Y-%m-%d-%H-%S&quot;)</span><br><span class="line">语法4：获取之前或者之后的某个时间（备份）</span><br><span class="line">#date -d&quot;-1 day&quot; +%Y-%m-%d-%H-%S(表示前一天时间，-1day&#x2F;year表示向前推一天年，+向后推)</span><br></pre></td></tr></table></figure>
 
-</code></pre>
-</li>
-</ul>
+
+<p><strong>8：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cal指令(作用：用来操作日历)</span><br><span class="line">语法1：#cal(cal -1) 直接输出当前月份日历</span><br><span class="line">语法2：#cal -3 输出上一个月，本月和下一个月的日历</span><br><span class="line">语法3：#cal -y 年份 表示输出某一年份的日历</span><br></pre></td></tr></table></figure>
+
+
 <p><strong>9：</strong></p>
-<ul>
-<li><pre><code>clear/ctrl +L指令（作用：清除终端中已经存在的命令和结果(信息)）
-语法：#clear     或者快捷键：ctrl+L
-需要注意的是：该命令并不是真的清除了之前的信息，而是把之前的信息隐藏到了最上面，通过滚动条继续查看以前的信息。
-附：windows清除命令为cls，真实清除
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**10：**</span><br><span class="line"></span><br><span class="line">- &#96;&#96;&#96;</span><br><span class="line">  管道（重要）</span><br><span class="line">  管道符：|(非汉字！！)</span><br><span class="line">  作用：一般可以用于&quot;过滤&quot;，&quot;特殊&quot;，&quot;扩展处理&quot;。</span><br><span class="line">  语法：管道不能单独使用，必须需要配合之前指令一起使用，主要作用是辅助作用。</span><br><span class="line">  </span><br><span class="line">  过滤案例：需要通过管道查询出根目录下包含&quot;y&quot;字母的文档名称。</span><br><span class="line">  #ls &#x2F;|grep y</span><br><span class="line">  1.针对该命令：以管道作为分界线，前面命令有个输出，后面需要先输入，然后再过滤，最后再输出，管道前面输出就是后面指令的输入</span><br><span class="line">  2.grep指令：主要用于过滤</span><br><span class="line">  </span><br><span class="line">  特殊案例：通过管道的操作方法来实现less的等价效果（无必要）  #cat路径|less相当于直接less</span><br><span class="line">  </span><br><span class="line">  扩展处理：统计目录下文档总个数（不同于wc统计文件内容）</span><br><span class="line">  #ls &#x2F;|wc-l</span><br></pre></td></tr></table></figure>
-</code></pre>
-</li>
-</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">clear&#x2F;ctrl +L指令（作用：清除终端中已经存在的命令和结果(信息)）</span><br><span class="line">语法：#clear     或者快捷键：ctrl+L</span><br><span class="line">需要注意的是：该命令并不是真的清除了之前的信息，而是把之前的信息隐藏到了最上面，通过滚动条继续查看以前的信息。</span><br><span class="line">附：windows清除命令为cls，真实清除</span><br></pre></td></tr></table></figure>
+
+<p><strong>10：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">管道（重要）</span><br><span class="line">管道符：|(非汉字！！)</span><br><span class="line">作用：一般可以用于&quot;过滤&quot;，&quot;特殊&quot;，&quot;扩展处理&quot;。</span><br><span class="line">语法：管道不能单独使用，必须需要配合之前指令一起使用，主要作用是辅助作用。</span><br><span class="line"></span><br><span class="line">过滤案例：需要通过管道查询出根目录下包含&quot;y&quot;字母的文档名称。</span><br><span class="line">#ls &#x2F;|grep y</span><br><span class="line">1.针对该命令：以管道作为分界线，前面命令有个输出，后面需要先输入，然后再过滤，最后再输出，管道前面输出就是后面指令的输入</span><br><span class="line">2.grep指令：主要用于过滤</span><br><span class="line"></span><br><span class="line">特殊案例：通过管道的操作方法来实现less的等价效果（无必要）  #cat路径|less相当于直接less</span><br><span class="line"></span><br><span class="line">扩展处理：统计目录下文档总个数（不同于wc统计文件内容）</span><br><span class="line">#ls &#x2F;|wc-l</span><br></pre></td></tr></table></figure>
+
 
       
 
