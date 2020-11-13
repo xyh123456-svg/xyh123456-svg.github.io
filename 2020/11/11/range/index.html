@@ -16,7 +16,7 @@
 <meta property="og:description" content="靶场 1： 12输入ssh bandit.labs.overtherwir.org:2220登录用户：bandit0，密码：bandit0  2： 1输入ls指令查看文件readname，cat指令打开readname文件获取密码  3： 1ls查看-文件，通过cat .&#x2F;-读取密码  4： 1ls查看文件spaces in this filename并通过cat&quot;&quot;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-11T10:49:44.000Z">
-<meta property="article:modified_time" content="2020-11-13T14:21:11.762Z">
+<meta property="article:modified_time" content="2020-11-13T14:42:32.579Z">
 <meta property="article:author" content="谢元浩">
 <meta name="twitter:card" content="summary">
   
@@ -218,6 +218,8 @@
 <p>[TOC]</p>
 <p>通过管道连用使data.txt文件以sort -n排行后用uniq -u输出第一行提取密码</p>
 <p><strong>11：</strong></p>
+<p>[TOC]</p>
+<p>通过strings过滤掉乱码，筛选出可打印字符再进行打印后用cat提取</p>
 
       
 

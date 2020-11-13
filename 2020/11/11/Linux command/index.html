@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://s1.ax1x.com/2020/10/30/BYqHXV.png">
 <meta property="og:image" content="https://s1.ax1x.com/2020/10/30/BYqO7F.png">
 <meta property="article:published_time" content="2020-11-11T15:31:45.000Z">
-<meta property="article:modified_time" content="2020-11-13T14:08:07.403Z">
+<meta property="article:modified_time" content="2020-11-13T14:39:10.872Z">
 <meta property="article:author" content="谢元浩">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s1.ax1x.com/2020/10/27/BlaqBt.png">
@@ -324,29 +324,19 @@
 <p><strong>sort指令</strong>（对文本进行排序，并将排序结果标准输出）<br>$$<br>sort [选项] [文件]<br>sort [选项] –files0-from=F<br>$$</p>
 <p>[TOC]</p>
 <ul>
-<li><p>-b, –ignore-leading-blanks：忽略文件每行开始的空格。</p>
-</li>
-<li><p>-d, –dictionary-order：按字典顺序排序，只考虑英文字母、数字及空格字，忽略其他的字符。</p>
-</li>
-<li><p>-g, –general-numeric-sort：对数字按照自然数排序。</p>
-</li>
-<li><p>-f, –ignore-case：排序的时候忽略大小写，将小写字母作为大写字母排序。</p>
-</li>
-<li><p>-i, –ignore-nonprinting：排序时不考虑不可显示字符。</p>
-</li>
-<li><p>-M, –month-sort：按英文月份排序。</p>
-</li>
-<li><p>-h, –human-numeric-sort：根据正常人们可读的数字排序，比如2K，1G</p>
-</li>
-<li><p>-n, –numeric-sort：根据每行开头的数字排序。</p>
-</li>
-<li><p>-R, –random-sort：随机排序。</p>
-</li>
-<li><p>–random-source=FILE：指定随机排序的文件。</p>
-</li>
-<li><p>-r, –reverse：逆序排序，正常是从小到大排序，使用该选项后从大到小排序。</p>
-</li>
+<li>-b, –ignore-leading-blanks：忽略文件每行开始的空格。</li>
+<li>-d, –dictionary-order：按字典顺序排序，只考虑英文字母、数字及空格字，忽略其他的字符。</li>
+<li>-g, –general-numeric-sort：对数字按照自然数排序。</li>
+<li>-f, –ignore-case：排序的时候忽略大小写，将小写字母作为大写字母排序。</li>
+<li>-i, –ignore-nonprinting：排序时不考虑不可显示字符。</li>
+<li>-M, –month-sort：按英文月份排序。</li>
+<li>-h, –human-numeric-sort：根据正常人们可读的数字排序，比如2K，1G</li>
+<li>-n, –numeric-sort：根据每行开头的数字排序。</li>
+<li>-R, –random-sort：随机排序。</li>
+<li>–random-source=FILE：指定随机排序的文件。</li>
+<li>-r, –reverse：逆序排序，正常是从小到大排序，使用该选项后从大到小排序。</li>
 </ul>
+<hr>
 <p>*uniq指令：**</p>
 <p>[TOC]</p>
 <ul>
@@ -361,6 +351,15 @@
 <li>[输入文件] 指定已排序好的文本文件。如果不指定此项，则从标准读取数据；</li>
 <li>[输出文件] 指定输出的文件。如果不指定此选项，则将内容显示到标准输出设备（显示终端）</li>
 </ul>
+<hr>
+<p><strong>vim指令：</strong></p>
+<p>[TOC]</p>
+<p>搜索关键字</p>
+<hr>
+<p><strong>strings指令：</strong></p>
+<p>[TOC]</p>
+<p>主要用来提取和显示非文本文件中的文本字符串，比如在对象文件或二进制文件中查找<strong>可打印</strong>的字符串</p>
+<p>-a 或 -    搜索整个文件，而不仅仅是数据段，以寻找可打印的字符串。如果省略这个标志，则 strings 命令只在对象文件的初始化数据空间内寻找。<br>-n Number    指定最小的字符串长度（除了缺省的 4 个字符以外）。字符串长度的最大值是 4096。这个标志与 -Number 标志相同。<br>-o    列出文件中每个跟随在其八进制偏移量之后的字符串。这个标志与 -t o 标志相同。<br>-t Format    列出从文件最开始起，每个跟随在其偏移量之后的字符串。该格式取决于用作 Format 变量的字符。<br>d<br>以十进制写下偏移量。<br>o<br>以八进制写下偏移量。<br>x<br>以十六进制写下偏移量。</p>
 
       
 
