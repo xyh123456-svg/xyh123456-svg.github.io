@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>靶场 | 此间的少年</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="靶场 1：连接主机：http:&#x2F;&#x2F;Bandit.labs.overthewire.org 12输入ssh bandit.labs.overtherwir.org:2220登录用户：bandit0，密码：bandit0  2：输入ls指令查看文件readname 1cat指令打开readname文件获取密码  3：登录bandit1，输入获取的密码 1ls查看-文件，通过cat .&#x2F;-读取">
+  <meta name="description" content="靶场 1： 12输入ssh bandit.labs.overtherwir.org:2220登录用户：bandit0，密码：bandit0  2： 1输入ls指令查看文件readname，cat指令打开readname文件获取密码  3： 1ls查看-文件，通过cat .&#x2F;-读取密码  4： 1ls查看文件spaces in this filename并通过cat&quot;&quot;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="靶场">
 <meta property="og:url" content="http://example.com/2020/11/11/range/index.html">
 <meta property="og:site_name" content="此间的少年">
-<meta property="og:description" content="靶场 1：连接主机：http:&#x2F;&#x2F;Bandit.labs.overthewire.org 12输入ssh bandit.labs.overtherwir.org:2220登录用户：bandit0，密码：bandit0  2：输入ls指令查看文件readname 1cat指令打开readname文件获取密码  3：登录bandit1，输入获取的密码 1ls查看-文件，通过cat .&#x2F;-读取">
+<meta property="og:description" content="靶场 1： 12输入ssh bandit.labs.overtherwir.org:2220登录用户：bandit0，密码：bandit0  2： 1输入ls指令查看文件readname，cat指令打开readname文件获取密码  3： 1ls查看-文件，通过cat .&#x2F;-读取密码  4： 1ls查看文件spaces in this filename并通过cat&quot;&quot;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-11T10:49:44.000Z">
-<meta property="article:modified_time" content="2020-11-11T10:50:15.650Z">
+<meta property="article:modified_time" content="2020-11-13T14:21:11.762Z">
 <meta property="article:author" content="谢元浩">
 <meta name="twitter:card" content="summary">
   
@@ -187,30 +187,37 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>靶场</strong></p>
-<p>1：连接主机：<a target="_blank" rel="noopener" href="http://bandit.labs.overthewire.org/">http://Bandit.labs.overthewire.org</a></p>
+<p><strong>1：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入ssh bandit.labs.overtherwir.org:2220</span><br><span class="line">登录用户：bandit0，密码：bandit0</span><br></pre></td></tr></table></figure>
 
-<p>2：输入ls指令查看文件<strong>readname</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat指令打开readname文件获取密码</span><br></pre></td></tr></table></figure>
+<p><strong>2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入ls指令查看文件readname，cat指令打开readname文件获取密码</span><br></pre></td></tr></table></figure>
 
-<p>3：登录bandit1，输入获取的密码</p>
+<p><strong>3：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看-文件，通过cat .&#x2F;-读取密码</span><br></pre></td></tr></table></figure>
 
-<p>4：登录bandit2，输入密码</p>
+<p><strong>4：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件spaces in this filename并通过cat&quot;&quot;读取密码</span><br></pre></td></tr></table></figure>
 
-<p>5：登录bandit3，输入密码</p>
+<p><strong>5：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件发现inhere目录，通过cd指令进入inhere目录，并通过ls-la查看inhere目录，发现hidden文件，通过cat .  ..  .hidden读取密码</span><br></pre></td></tr></table></figure>
 
-<p>6：登录bandit4，输入密码</p>
+<p><strong>6：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件发现目录inhere，通过ls-al指令读取发现file文件，通过file .&#x2F;*读取file文件，发现-file07为text文件，通过cat读取-file07文件读取密码</span><br></pre></td></tr></table></figure>
 
-<p>7：登录bandit5，输入密码</p>
+<p><strong>7：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件发现目录inhere，通过ls-al查看发现一系列文件，根据find指令找寻符合条件的可读的，1033字节的文件，即find . -type f -size 1033c，发现.&#x2F;maybehere07&#x2F;.file2文件，通过cat提取文件密码</span><br></pre></td></tr></table></figure>
 
-<p>8：</p>
+<p><strong>8：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">根据给出文件条件直接用find语句查询，find &#x2F; -user bandit7 -group bandit6 -size 33c 2&gt;&#x2F;dev&#x2F;null语句查询文件，其中2&gt;&#x2F;dev&#x2F;null作用可以将错误信息重定向到黑洞中而不显示出来发现文件后以cat提取密码</span><br></pre></td></tr></table></figure>
 
+<p><strong>9：</strong></p>
+<p>[TOC]</p>
+<p>通过管道连用cat对data.txt提取和grep搜索millionth得到密码</p>
+<p><strong>10：</strong></p>
+<p>[TOC]</p>
+<p>通过管道连用使data.txt文件以sort -n排行后用uniq -u输出第一行提取密码</p>
+<p><strong>11：</strong></p>
 
       
 

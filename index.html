@@ -186,7 +186,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>linux基础指令1：**</p>
+        <p>linux基础指令1：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#ls:显示当年目录下所有文件&#x2F;文件夹名称</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#ls 路径：显示指定路径下文件&#x2F;文件夹名称（&#x2F;表示根目录）</span><br></pre></td></tr></table></figure>
@@ -198,7 +198,6 @@
 <p>](<a target="_blank" rel="noopener" href="https://imgchr.com/i/Bla7jA">https://imgchr.com/i/Bla7jA</a>)<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/BlaqBt"><img src="https://s1.ax1x.com/2020/10/27/BlaqBt.png" alt="BlaqBt.png" style="zoom: 33%;" /></a><br><a target="_blank" rel="noopener" href="https://imgchr.com/i/BlabnI"><img src="https://s1.ax1x.com/2020/10/27/BlabnI.png" alt="BlabnI.png" style="zoom: 33%;" /></a><br><a target="_blank" rel="noopener" href="https://imgchr.com/i/BlaTcd"><img src="https://s1.ax1x.com/2020/10/27/BlaTcd.png" alt="BlaTcd.png" style="zoom: 33%;" /></a></p>
 <hr>
 <p><strong>linux基本指令2：</strong></p>
-<p>​        </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#pwd:打印当前目录名称</span><br></pre></td></tr></table></figure>
 
 <p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BYTGb4"><img src="https://s1.ax1x.com/2020/10/30/BYTGb4.png" alt="BYTGb4.png" style="zoom:67%;" /></a></p>
@@ -305,6 +304,48 @@
 <p><strong>10：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">管道（重要）</span><br><span class="line">管道符：|(非汉字！！)</span><br><span class="line">作用：一般可以用于&quot;过滤&quot;，&quot;特殊&quot;，&quot;扩展处理&quot;。</span><br><span class="line">语法：管道不能单独使用，必须需要配合之前指令一起使用，主要作用是辅助作用。</span><br><span class="line"></span><br><span class="line">过滤案例：需要通过管道查询出根目录下包含&quot;y&quot;字母的文档名称。</span><br><span class="line">#ls &#x2F;|grep y</span><br><span class="line">1.针对该命令：以管道作为分界线，前面命令有个输出，后面需要先输入，然后再过滤，最后再输出，管道前面输出就是后面指令的输入</span><br><span class="line">2.grep指令：主要用于过滤</span><br><span class="line"></span><br><span class="line">特殊案例：通过管道的操作方法来实现less的等价效果（无必要）  #cat路径|less相当于直接less</span><br><span class="line"></span><br><span class="line">扩展处理：统计目录下文档总个数（不同于wc统计文件内容）</span><br><span class="line">#ls &#x2F;|wc-l</span><br></pre></td></tr></table></figure>
 
+<hr>
+<hr>
+<p><strong>sort指令</strong>（对文本进行排序，并将排序结果标准输出）<br>$$<br>sort [选项] [文件]<br>sort [选项] –files0-from=F<br>$$</p>
+<p>[TOC]</p>
+<ul>
+<li><p>-b, –ignore-leading-blanks：忽略文件每行开始的空格。</p>
+</li>
+<li><p>-d, –dictionary-order：按字典顺序排序，只考虑英文字母、数字及空格字，忽略其他的字符。</p>
+</li>
+<li><p>-g, –general-numeric-sort：对数字按照自然数排序。</p>
+</li>
+<li><p>-f, –ignore-case：排序的时候忽略大小写，将小写字母作为大写字母排序。</p>
+</li>
+<li><p>-i, –ignore-nonprinting：排序时不考虑不可显示字符。</p>
+</li>
+<li><p>-M, –month-sort：按英文月份排序。</p>
+</li>
+<li><p>-h, –human-numeric-sort：根据正常人们可读的数字排序，比如2K，1G</p>
+</li>
+<li><p>-n, –numeric-sort：根据每行开头的数字排序。</p>
+</li>
+<li><p>-R, –random-sort：随机排序。</p>
+</li>
+<li><p>–random-source=FILE：指定随机排序的文件。</p>
+</li>
+<li><p>-r, –reverse：逆序排序，正常是从小到大排序，使用该选项后从大到小排序。</p>
+</li>
+</ul>
+<p>*uniq指令：**</p>
+<p>[TOC]</p>
+<ul>
+<li>-c或–count 在每列旁边显示该行重复出现的次数。</li>
+<li>-d或–repeated 仅显示重复出现的行列。</li>
+<li>-f&lt;栏位&gt;或–skip-fields=&lt;栏位&gt; 忽略比较指定的栏位。</li>
+<li>-s&lt;字符位置&gt;或–skip-chars=&lt;字符位置&gt; 忽略比较指定的字符。</li>
+<li>-u或–unique 仅显示出一次的行列。</li>
+<li>-w&lt;字符位置&gt;或–check-chars=&lt;字符位置&gt; 指定要比较的字符。</li>
+<li>–help 显示帮助。</li>
+<li>–version 显示版本信息。</li>
+<li>[输入文件] 指定已排序好的文本文件。如果不指定此项，则从标准读取数据；</li>
+<li>[输出文件] 指定输出的文件。如果不指定此选项，则将内容显示到标准输出设备（显示终端）</li>
+</ul>
 
       
 
@@ -368,30 +409,37 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>靶场</strong></p>
-<p>1：连接主机：<a target="_blank" rel="noopener" href="http://bandit.labs.overthewire.org/">http://Bandit.labs.overthewire.org</a></p>
+<p><strong>1：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入ssh bandit.labs.overtherwir.org:2220</span><br><span class="line">登录用户：bandit0，密码：bandit0</span><br></pre></td></tr></table></figure>
 
-<p>2：输入ls指令查看文件<strong>readname</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat指令打开readname文件获取密码</span><br></pre></td></tr></table></figure>
+<p><strong>2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入ls指令查看文件readname，cat指令打开readname文件获取密码</span><br></pre></td></tr></table></figure>
 
-<p>3：登录bandit1，输入获取的密码</p>
+<p><strong>3：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看-文件，通过cat .&#x2F;-读取密码</span><br></pre></td></tr></table></figure>
 
-<p>4：登录bandit2，输入密码</p>
+<p><strong>4：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件spaces in this filename并通过cat&quot;&quot;读取密码</span><br></pre></td></tr></table></figure>
 
-<p>5：登录bandit3，输入密码</p>
+<p><strong>5：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件发现inhere目录，通过cd指令进入inhere目录，并通过ls-la查看inhere目录，发现hidden文件，通过cat .  ..  .hidden读取密码</span><br></pre></td></tr></table></figure>
 
-<p>6：登录bandit4，输入密码</p>
+<p><strong>6：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件发现目录inhere，通过ls-al指令读取发现file文件，通过file .&#x2F;*读取file文件，发现-file07为text文件，通过cat读取-file07文件读取密码</span><br></pre></td></tr></table></figure>
 
-<p>7：登录bandit5，输入密码</p>
+<p><strong>7：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件发现目录inhere，通过ls-al查看发现一系列文件，根据find指令找寻符合条件的可读的，1033字节的文件，即find . -type f -size 1033c，发现.&#x2F;maybehere07&#x2F;.file2文件，通过cat提取文件密码</span><br></pre></td></tr></table></figure>
 
-<p>8：</p>
+<p><strong>8：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">根据给出文件条件直接用find语句查询，find &#x2F; -user bandit7 -group bandit6 -size 33c 2&gt;&#x2F;dev&#x2F;null语句查询文件，其中2&gt;&#x2F;dev&#x2F;null作用可以将错误信息重定向到黑洞中而不显示出来发现文件后以cat提取密码</span><br></pre></td></tr></table></figure>
 
+<p><strong>9：</strong></p>
+<p>[TOC]</p>
+<p>通过管道连用cat对data.txt提取和grep搜索millionth得到密码</p>
+<p><strong>10：</strong></p>
+<p>[TOC]</p>
+<p>通过管道连用使data.txt文件以sort -n排行后用uniq -u输出第一行提取密码</p>
+<p><strong>11：</strong></p>
 
       
 
