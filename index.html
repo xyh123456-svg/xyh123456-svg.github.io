@@ -166,6 +166,106 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-misc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/24/misc/">misc-基本编码</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/24/misc/" class="archive-article-date">
+  	<time datetime="2020-11-24T13:48:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>编码的学问，代码的奥妙，程序的结构，想知道的基本编码都在这！</p>
+<img src="http://img95.699pic.com/photo/50101/3773.jpg_wh860.jpg" alt="查看源图像" style="zoom: 33%;" />
+
+<h1 id="使用（编码工具）"><a href="#使用（编码工具）" class="headerlink" title="使用（编码工具）"></a>使用（编码工具）</h1><h2 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>直接下载可执行程序</p>
+<blockquote>
+<p>百度网盘 <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1q2N1w44bvYIXLe5gCI5oKA">https://pan.baidu.com/s/1q2N1w44bvYIXLe5gCI5oKA</a> 密码：k5b9</p>
+</blockquote>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>使用Electron运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;guyoung&#x2F;CaptfEncoder.gitcd CaptfEncodernpm installnpm start</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/guyoung/CaptfEncoder">https://github.com/guyoung/CaptfEncoder</a></p>
+</blockquote>
+<p>*<strong>本文作者：guyoung，转载请注明来自FreeBuf.COM</strong></p>
+<p>本文作者：guyoung， 转载请注明来自<a target="_blank" rel="noopener" href="https://www.freebuf.com/">FreeBuf.COM</a></p>
+<h2 id="2"><a href="#2" class="headerlink" title="2."></a><strong>2.</strong></h2><p><a target="_blank" rel="noopener" href="http://ctf.ssleye.com/%EF%BC%88%E5%9C%A8%E7%BA%BF%E7%BC%96%E7%A0%81%E5%B7%A5%E5%85%B7%EF%BC%89">http://ctf.ssleye.com/（在线编码工具）</a></p>
+<hr>
+<p><strong>进制转换</strong></p>
+<p><strong>ASCII编码表</strong>：<a target="_blank" rel="noopener" href="http://ascii.911cha.com/">ASCII编码对照表_911查询 (911cha.com)</a></p>
+<p><strong>python</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;chr(84)   (chr表示ASCII整数转字符)</span><br><span class="line">&#39;T&#39;</span><br><span class="line">&gt;&gt;&gt;ord(&#39;T&#39;)  (ord表示字符转ASCII整数)</span><br><span class="line">84</span><br></pre></td></tr></table></figure>
+
+<p><strong>Unicode编码</strong>（国际编码）</p>
+<p>4种格式：</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DaaueH"><img src="https://s3.ax1x.com/2020/11/25/DaaueH.png" alt="DaaueH.png" style="zoom:50%;" /></a></p>
+<p><strong>乱码</strong>：<a target="_blank" rel="noopener" href="http://www.mytju.com/classcode/tools/messycoderecover.asp">http://www.mytju.com/classcode/tools/messycoderecover.asp</a></p>
+<p><strong>Escape编码</strong>：</p>
+<p>格式：%u<del>~</del></p>
+<p>1.在线编码：<a target="_blank" rel="noopener" href="http://web.cheacuo.net/charsetescape">http://web.cheacuo.net/charsetescape</a></p>
+<p>2.浏览器F12控制台使用JS进行编解码</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DaaeyD"><img src="https://s3.ax1x.com/2020/11/25/DaaeyD.png" alt="DaaeyD.png"></a></p>
+<hr>
+<p><strong>Base64/32/16</strong>（Base64是一种基于64个可打印字符来表示二进制数据的表示方法）</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DaamOe"><img src="https://s3.ax1x.com/2020/11/25/DaamOe.png" alt="DaamOe.png" style="zoom: 33%;" /></a></p>
+<p>字符集差别：</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DaaZQO"><img src="https://s3.ax1x.com/2020/11/25/DaaZQO.png" alt="DaaZQO.png" style="zoom:67%;" /></a></p>
+<p>样例：</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DaaVSK"><img src="https://s3.ax1x.com/2020/11/25/DaaVSK.png" alt="DaaVSK.png" style="zoom:67%;" /></a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/11/24/misc/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux command" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
