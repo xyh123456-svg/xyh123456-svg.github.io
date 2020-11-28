@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>靶场训练 | 此间的少年</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CTF练习：靶场夺旗 环境准备 信息收集 ssh登录靶机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="靶场训练">
+<meta property="og:url" content="http://example.com/2020/11/11/range/index.html">
+<meta property="og:site_name" content="此间的少年">
+<meta property="og:description" content="CTF练习：靶场夺旗 环境准备 信息收集 ssh登录靶机">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://5b0988e595225.cdn.sohucs.com/images/20170921/30b99ba4781046fe9f0a80300694b8f5.jpeg">
+<meta property="article:published_time" content="2020-11-11T10:49:44.000Z">
+<meta property="article:modified_time" content="2020-11-24T13:45:00.749Z">
+<meta property="article:author" content="谢元浩">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://5b0988e595225.cdn.sohucs.com/images/20170921/30b99ba4781046fe9f0a80300694b8f5.jpeg">
+  
+    <link rel="alternate" href="/atom.xml" title="此间的少年" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">此间的少年</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-range" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/11/range/" class="article-date">
+  <time datetime="2020-11-11T10:49:44.000Z" itemprop="datePublished">2020-11-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      靶场训练
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="CTF练习：靶场夺旗"><a href="#CTF练习：靶场夺旗" class="headerlink" title="CTF练习：靶场夺旗"></a>CTF练习：靶场夺旗</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43233085/article/details/103212231#_4">环境准备</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43233085/article/details/103212231#_13">信息收集</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43233085/article/details/103212231#ssh_49">ssh登录靶机</a></li>
+</ul>
+<img src="http://5b0988e595225.cdn.sohucs.com/images/20170921/30b99ba4781046fe9f0a80300694b8f5.jpeg" alt="é»å®¢" style="zoom: 25%;" />
+
+<a id="more"></a>
+
+<p><strong>靶场</strong></p>
+<p><strong>1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入ssh bandit.labs.overtherwir.org:2220</span><br><span class="line">登录用户：bandit0，密码：bandit0</span><br></pre></td></tr></table></figure>
+
+<p><strong>2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入ls指令查看文件readname，cat指令打开readname文件获取密码</span><br></pre></td></tr></table></figure>
+
+<p><strong>3：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看-文件，通过cat .&#x2F;-读取密码</span><br></pre></td></tr></table></figure>
+
+<p><strong>4：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件spaces in this filename并通过cat&quot;&quot;读取密码</span><br></pre></td></tr></table></figure>
+
+<p><strong>5：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件发现inhere目录，通过cd指令进入inhere目录，并通过ls-la查看inhere目录，发现hidden文件，通过cat .  ..  .hidden读取密码</span><br></pre></td></tr></table></figure>
+
+<p><strong>6：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件发现目录inhere，通过ls-al指令读取发现file文件，通过file .&#x2F;*读取file文件，发现-file07为text文件，通过cat读取-file07文件读取密码</span><br></pre></td></tr></table></figure>
+
+<p><strong>7：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls查看文件发现目录inhere，通过ls-al查看发现一系列文件，根据find指令找寻符合条件的可读的，1033字节的文件，即find . -type f -size 1033c，发现.&#x2F;maybehere07&#x2F;.file2文件，通过cat提取文件密码</span><br></pre></td></tr></table></figure>
+
+<p><strong>8：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">根据给出文件条件直接用find语句查询，find &#x2F; -user bandit7 -group bandit6 -size 33c 2&gt;&#x2F;dev&#x2F;null语句查询文件，其中2&gt;&#x2F;dev&#x2F;null作用可以将错误信息重定向到黑洞中而不显示出来发现文件后以cat提取密码</span><br></pre></td></tr></table></figure>
+
+<p><strong>9：</strong></p>
+<p>[TOC]</p>
+<p>通过管道连用cat对data.txt提取和grep搜索millionth得到密码</p>
+<p><strong>10：</strong></p>
+<p>[TOC]</p>
+<p>通过管道连用使data.txt文件以sort -n排行后用uniq -u输出第一行提取密码</p>
+<p><strong>11：</strong></p>
+<p>[TOC]</p>
+<p>通过strings过滤掉乱码，筛选出可打印字符再进行打印后用cat提取</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/11/range/" data-id="cki1c8mwi0006mou4a23lff0j" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/11/11/Linux%20command/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Linuxcommand
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/10/24/configuration%20setup/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">配置安装</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/11/25/misc-steganography/">CTF隐写术，杂项解密！</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/24/misc-basic%20coding/">misc-基本编码</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/11/Linux%20command/">Linuxcommand</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/11/range/">靶场训练</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/24/configuration%20setup/">配置安装</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 谢元浩<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
