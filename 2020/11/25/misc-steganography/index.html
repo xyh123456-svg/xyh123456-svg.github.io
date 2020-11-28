@@ -64,9 +64,25 @@
 <hr>
 <h1 id="使用工具"><a href="#使用工具" class="headerlink" title="使用工具"></a><strong>使用工具</strong></h1><p> [Stegsolve.jar](......\Documents\Tencent Files\1766871892\FileRecv\Stegsolve.jar) </p>
 <hr>
-<p><strong>GIF隐写</strong>（gif图片是一种动态图片，他采用的方式是多张图片乱换播放的方式实现动态效果）</p>
+<h1 id="GIF隐写"><a href="#GIF隐写" class="headerlink" title="GIF隐写"></a><strong>GIF隐写</strong></h1><p>（gif图片是一种动态图片，他采用的方式是多张图片乱换播放的方式实现动态效果）</p>
 <p><strong>注：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/D6Qtoj"><img src="https://s3.ax1x.com/2020/11/28/D6Qtoj.png" alt="D6Qtoj.png" style="zoom: 67%;" /></a></p>
 <p>考察点：文件头、帧间隔（identify-format“%s %T\N”)</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/D6uLYq"><img src="https://s3.ax1x.com/2020/11/28/D6uLYq.png" alt="D6uLYq.png" style="zoom: 33%;" /></a></p>
+<h2 id="1-分帧查看"><a href="#1-分帧查看" class="headerlink" title="1.分帧查看"></a>1.分帧查看</h2><p>通过Stesolve.jar以Frame Browser命令行使后分帧查看各帧内容</p>
+<p> <a target="_blank" rel="noopener" href="https://imgchr.com/i/D6uLYq"><img src="https://s3.ax1x.com/2020/11/28/D6uLYq.png" alt="D6uLYq.png" style="zoom:25%;" /></a><a target="_blank" rel="noopener" href="https://imgchr.com/i/D6urOe"><img src="https://s3.ax1x.com/2020/11/28/D6urOe.png" alt="D6urOe.png" style="zoom: 50%;" /></a></p>
+<h2 id="2-分帧剪辑"><a href="#2-分帧剪辑" class="headerlink" title="2.分帧剪辑"></a>2.分帧剪辑</h2><p>通过gifsplitter.exe 工具将文件剪切出各帧查看</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/D6uyeH"><img src="https://s3.ax1x.com/2020/11/28/D6uyeH.png" alt="D6uyeH.png" style="zoom:67%;" /></a></p>
+<hr>
+<h1 id="文件格式缺失"><a href="#文件格式缺失" class="headerlink" title="文件格式缺失"></a>文件格式缺失</h1><p>遇到报错的文件需要我们去修复图片（gif头文件名为GIF)</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/D6uqkn"><img src="https://s3.ax1x.com/2020/11/28/D6uqkn.png" alt="D6uqkn.png" style="zoom:50%;" /></a></p>
+<p>通过补全文件名来修复文件，进而进行分帧查看</p>
+<p>修复前：<a target="_blank" rel="noopener" href="https://imgchr.com/i/D6uDyD"><img src="https://s3.ax1x.com/2020/11/28/D6uDyD.png" alt="D6uDyD.png" style="zoom: 80%;" /></a>    <a target="_blank" rel="noopener" href="https://imgchr.com/i/D6uHTs"><img src="https://s3.ax1x.com/2020/11/28/D6uHTs.png" alt="D6uHTs.png" style="zoom:80%;" /></a></p>
+<p>修复后：<a target="_blank" rel="noopener" href="https://imgchr.com/i/D6QUFs"><img src="https://s3.ax1x.com/2020/11/28/D6QUFs.png" alt="D6QUFs.png" style="zoom: 25%;" /></a></p>
+<hr>
+<h1 id="EXIF隐写"><a href="#EXIF隐写" class="headerlink" title="EXIF隐写"></a>EXIF隐写</h1><p>通过直接查看属性获取编码，并进行编码转化</p>
+<p>1.例题图片：  <a target="_blank" rel="noopener" href="https://imgchr.com/i/D6uBQO"><img src="https://s3.ax1x.com/2020/11/28/D6uBQO.png" alt="D6uBQO.png" style="zoom:150%;" /></a> 2.打开图片属性找取编码<a target="_blank" rel="noopener" href="https://imgchr.com/i/D6u6wd"><img src="https://s3.ax1x.com/2020/11/28/D6u6wd.png" alt="D6u6wd.png" style="zoom: 33%;" /></a></p>
+<p>3.编码转换：<a target="_blank" rel="noopener" href="https://imgchr.com/i/D6ucTA"><img src="https://s3.ax1x.com/2020/11/28/D6ucTA.png" alt="D6ucTA.png" style="zoom:50%;" /></a></p>
 
         <p class="suffix-end">__END__</p>
         <div class="suffix-box">
