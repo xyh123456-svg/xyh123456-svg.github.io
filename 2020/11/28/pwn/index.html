@@ -64,6 +64,40 @@
 <p><a target="_blank" rel="noopener" href="https://imgchr.com/i/D6LpMF"><img src="https://s3.ax1x.com/2020/11/29/D6LpMF.png" alt="D6LpMF.png" style="zoom: 33%;" /></a>                        <a target="_blank" rel="noopener" href="https://imgchr.com/i/D6qzxU"><img src="https://s3.ax1x.com/2020/11/29/D6qzxU.png" alt="D6qzxU.png" style="zoom: 33%;" /></a></p>
 <hr>
 <h2 id="3-函数调用栈："><a href="#3-函数调用栈：" class="headerlink" title="3.函数调用栈："></a>3.函数调用栈：</h2><h3 id="一"><a href="#一" class="headerlink" title="一."></a>一.</h3><p>程序的执行过程可看作连续的函数调用，当一个函数执行完毕时，程序要回到调用指令的下一条指令（紧接着call指令）处继续执行函数。调用过程通常使用堆栈实现，每个用户态进程对应一个调用栈结构(call stack)。编译器使用堆栈传递函数参数、保存返回地址、临时保存寄存器原有值(即函数调用的上下文)以备恢复以及存储本地局部变量。</p>
+<h3 id="1-寄存器"><a href="#1-寄存器" class="headerlink" title="1.寄存器"></a>1.寄存器</h3><p>(寄存器是处理器加工数据或运行程序的重要载体，用于存放程序执行中用到的数据和指令。)</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/D5xGh6"><img src="https://s3.ax1x.com/2020/12/02/D5xGh6.png" alt="D5xGh6.png" style="zoom: 50%;" /></a></p>
+<h4 id="寄存器分配"><a href="#寄存器分配" class="headerlink" title="寄存器分配"></a>寄存器分配</h4><p>最基本的种类大致分为ax，bx，cx，dx等，其中每一个寄存器包含16位字节，对于ax而言，分为2部分，ah和al，ah存放前8个字节，al存放后8个字节（具体指令设计汇编程序语言）</p>
+<p>（<a target="_blank" rel="noopener" href="http://www.3shuwu.com/Home/Book/show/id/2918.html%EF%BC%89">http://www.3shuwu.com/Home/Book/show/id/2918.html）</a></p>
+<h4 id="寄存器使用约定"><a href="#寄存器使用约定" class="headerlink" title="寄存器使用约定"></a>寄存器使用约定</h4><p>1.当函数调用时，若主调函数希望保持这些寄存器的值，则必须在调用前显式地将其保存在栈中；被调函数可以覆盖这些寄存器，而不会破坏主调函数所需的数据。</p>
+<p>2.被调函数在覆盖这些寄存器的值时，必须先将寄存器原值压入栈中保存起来，并在函数返回前从栈中恢复其原值，因为主调函数可能也在使用这些寄存器。</p>
+<h3 id="2-栈帧结构"><a href="#2-栈帧结构" class="headerlink" title="2.栈帧结构"></a>2.栈帧结构</h3><p>1.函数调用经常是嵌套的，在同一时刻，堆栈中会有多个函数的信息。每个未完成运行的函数占用一个独立的连续区域，称作栈帧(Stack Frame)。栈帧是堆栈的逻辑片段，当调用函数时逻辑栈帧被压入堆栈, 当函数返回时逻辑栈帧被从堆栈中弹出。栈帧存放着函数参数，局部变量及恢复前一栈帧所需要的数据等。</p>
+<p> 2.栈帧的边界由栈帧基地址指针EBP和堆栈指针ESP界定(指针存放在相应寄存器中)。EBP指向当前栈帧底部(高地址)，在当前栈帧内位置固定；ESP指向当前栈帧顶部(低地址)，当程序执行时ESP会随着数据的入栈和出栈而移动。</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/D5x0HA"><img src="https://s3.ax1x.com/2020/12/02/D5x0HA.png" alt="D5x0HA.png"></a></p>
+<p>由图可知，函数调用时入栈顺序：</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/D5xQB9"><img src="https://s3.ax1x.com/2020/12/02/D5xQB9.png" alt="D5xQB9.png"></a></p>
+<h3 id="3-堆栈操作"><a href="#3-堆栈操作" class="headerlink" title="*3.堆栈操作"></a>*<em>3.堆栈操作</em></h3><p> 函数调用时的具体步骤如下：</p>
+<ol>
+<li><p>主调函数将被调函数所要求的参数，根据相应的函数调用约定，保存在运行时栈中。该操作会改变程序的栈指针。</p>
+<p>注：x86平台将参数压入调用栈中。而x86_64平台具有16个通用64位寄存器，故调用函数时前6个参数通常由寄存器传递，其余参数才通过栈传递。</p>
+</li>
+<li><p>主调函数将控制权移交给被调函数(使用call指令)。函数的返回地址(待执行的下条指令地址)保存在程序栈中(压栈操作隐含在call指令中)。</p>
+</li>
+<li><p>若有必要，被调函数会设置帧基指针，并保存被调函数希望保持不变的寄存器值。</p>
+</li>
+<li><p>被调函数通过修改栈顶指针的值，为自己的局部变量在运行时栈中分配内存空间，并从帧基指针的位置处向![U0[GA}BV<code>T8MVP6P&#123;G)VETJ](C:\Users\xyh\Documents\Tencent Files\1766871892\FileRecv\MobileFile\Image\U0[GA&#125;BV</code>T8MVP6P{G)VETJ.png)低地址方向存放被调函数的局部变量和临时变量。</p>
+</li>
+<li><p>被调函数执行自己任务，此时可能需要访问由主调函数传入的参数。若被调函数返回一个值，该值通常保存在一个指定寄存器中(如EAX)。</p>
+</li>
+<li><p>一旦被调函数完成操作，为该函数局部变量分配的栈空间将被释放。这通常是步骤4的逆向执行。</p>
+</li>
+<li><p>恢复步骤3中保存的寄存器值，包含主调函数的帧基指针寄存器。</p>
+</li>
+<li><p>被调函数将控制权交还主调函数(使用ret指令)。根据使用的函数调用约定，该操作也可能从程序栈上清除先前传入的参数。</p>
+</li>
+<li><p>主调函数再次获得控制权后，可能需要将先前的参数从栈上清除。在这种情况下，对栈的修改需要将帧基指针值恢复到步骤1之前的值。</p>
+<p>步骤3与步骤4在函数调用之初常一同出现，统称为函数序(prologue)；步骤6到步骤8在函数调用的最后常一同出现，统称为函数跋(epilogue)。函数序和函数跋是编译器自动添加的开始和结束汇编代码，其实现与CPU架构和编译器相关。除步骤5代表函数实体外，其它所有操作组成函数调用。</p>
+</li>
+</ol>
 
         <p class="suffix-end">__END__</p>
         <div class="suffix-box">
