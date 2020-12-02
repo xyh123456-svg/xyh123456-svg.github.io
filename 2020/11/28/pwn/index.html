@@ -72,7 +72,7 @@
 <p>2.被调函数在覆盖这些寄存器的值时，必须先将寄存器原值压入栈中保存起来，并在函数返回前从栈中恢复其原值，因为主调函数可能也在使用这些寄存器。</p>
 <h3 id="2-栈帧结构"><a href="#2-栈帧结构" class="headerlink" title="2.栈帧结构"></a>2.栈帧结构</h3><p>1.函数调用经常是嵌套的，在同一时刻，堆栈中会有多个函数的信息。每个未完成运行的函数占用一个独立的连续区域，称作栈帧(Stack Frame)。栈帧是堆栈的逻辑片段，当调用函数时逻辑栈帧被压入堆栈, 当函数返回时逻辑栈帧被从堆栈中弹出。栈帧存放着函数参数，局部变量及恢复前一栈帧所需要的数据等。</p>
 <p> 2.栈帧的边界由栈帧基地址指针EBP和堆栈指针ESP界定(指针存放在相应寄存器中)。EBP指向当前栈帧底部(高地址)，在当前栈帧内位置固定；ESP指向当前栈帧顶部(低地址)，当程序执行时ESP会随着数据的入栈和出栈而移动。</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/D5x0HA"><img src="https://s3.ax1x.com/2020/12/02/D5x0HA.png" alt="D5x0HA.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/D5x0HA"><img src="https://s3.ax1x.com/2020/12/02/D5x0HA.png" alt="D5x0HA.png" style="zoom: 50%;" /></a></p>
 <p>由图可知，函数调用时入栈顺序：</p>
 <p><a target="_blank" rel="noopener" href="https://imgchr.com/i/D5xQB9"><img src="https://s3.ax1x.com/2020/12/02/D5xQB9.png" alt="D5xQB9.png"></a></p>
 <h3 id="3-堆栈操作"><a href="#3-堆栈操作" class="headerlink" title="*3.堆栈操作"></a>*<em>3.堆栈操作</em></h3><p> 函数调用时的具体步骤如下：</p>
