@@ -83,6 +83,71 @@
 <h1 id="EXIF隐写"><a href="#EXIF隐写" class="headerlink" title="EXIF隐写"></a>EXIF隐写</h1><p>通过直接查看属性获取编码，并进行编码转化</p>
 <p>1.例题图片：  <a target="_blank" rel="noopener" href="https://imgchr.com/i/D6uBQO"><img src="https://s3.ax1x.com/2020/11/28/D6uBQO.png" alt="D6uBQO.png" style="zoom:150%;" /></a> 2.打开图片属性找取编码<a target="_blank" rel="noopener" href="https://imgchr.com/i/D6u6wd"><img src="https://s3.ax1x.com/2020/11/28/D6u6wd.png" alt="D6u6wd.png" style="zoom: 33%;" /></a></p>
 <p>3.编码转换：<a target="_blank" rel="noopener" href="https://imgchr.com/i/D6ucTA"><img src="https://s3.ax1x.com/2020/11/28/D6ucTA.png" alt="D6ucTA.png" style="zoom:50%;" /></a></p>
+<hr>
+<h1 id="图种"><a href="#图种" class="headerlink" title="图种"></a>图种</h1><ul>
+<li>先制作一个zip，把想要隐藏的东西放进去，再需要一张jpg图片2.jpg，然后可以执行命令copy/b 2.jpg+1.zip output.jpg。即得到一张图种。</li>
+<li>利用binwalk可以自动化的分析图片中附加的其他的文件，其原理就是检索匹配文件头，常用的一些文件头都可以被发现，然后利用偏移可以配合winhex分割出隐藏的部分。</li>
+<li></li>
+</ul>
+<h2 id="Binwalk使用："><a href="#Binwalk使用：" class="headerlink" title="Binwalk使用："></a>Binwalk使用：</h2><ul>
+<li>最简单使用方法很直接，提供固件文件路径和文件名即可：</li>
+</ul>
+<p>$binwalk test.file</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DLzWwV"><img src="https://s3.ax1x.com/2020/12/05/DLzWwV.png" alt="DLzWwV.png" style="zoom:50%;" /></a></p>
+<ul>
+<li>-y选项仅包括指定的搜索文本匹配的结果</li>
+</ul>
+<p>binwalk -y flag zip.JPG</p>
+<ul>
+<li>-x选项是排除搜索结果中的指定符合规则的文本（或者字符串）。</li>
+</ul>
+<p>$binwalk -x jffs2 firmware.bin</p>
+<h3 id="自动化提取："><a href="#自动化提取：" class="headerlink" title="自动化提取："></a>自动化提取：</h3><ul>
+<li><p>-e选项可以用来执行自动数据提取</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DLzrWQ"><img src="https://s3.ax1x.com/2020/12/05/DLzrWQ.png" alt="DLzrWQ.png" style="zoom:50%;" /></a></p>
+</li>
+</ul>
+<p>$binwalk -e firmware.bin</p>
+<ul>
+<li><p>手动提取：</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DLzszj"><img src="https://s3.ax1x.com/2020/12/05/DLzszj.png" alt="DLzszj.png" style="zoom:50%;" /></a></p>
+</li>
+<li><p>比较功能：</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DLzcyn"><img src="https://s3.ax1x.com/2020/12/05/DLzcyn.png" alt="DLzcyn.png" style="zoom: 67%;" /></a></p>
+</li>
+</ul>
+<h2 id="foremost"><a href="#foremost" class="headerlink" title="foremost:"></a>foremost:</h2><ul>
+<li>有时binwalk能够分析到文件中包含的数据结果，但是无法自动提取，可以选择使用dd手动提取或者使用-linux下的foremost工具</li>
+</ul>
+<ul>
+<li>foremost用法与binwalk类似，直接输入foremost文件名即可</li>
+</ul>
+<p>例题：<a target="_blank" rel="noopener" href="https://imgchr.com/i/DLzRe0"><img src="https://s3.ax1x.com/2020/12/05/DLzRe0.png" alt="DLzRe0.png" style="zoom:150%;" /></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># foremost foremost.jpg</span><br><span class="line">Processing: foremost.jpg</span><br><span class="line">|*|</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>得到：</li>
+</ul>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://imgchr.com/i/DLzgLq"><img src="https://s3.ax1x.com/2020/12/05/DLzgLq.png" alt="DLzgLq.png"  /></a></li>
+</ul>
+<hr>
+<h1 id="PNG隐写"><a href="#PNG隐写" class="headerlink" title="PNG隐写"></a>PNG隐写</h1><ul>
+<li><p>PNG格式：</p>
+<p> 对于一个PNG文件来说，其文件头总是由固定的字节来描述的，剩余的部分由3个以上的PNG的数据块按照特定顺序组成。</p>
+<p>​            文件头： 89 50 4E 47 0D 1A 0A +数据块 +数据块 +数据块….</p>
+</li>
+</ul>
+<ul>
+<li><p>可参考：<a target="_blank" rel="noopener" href="https://ctf-wiki.github.io/ctf-wiki/misc/picture/png-zh/">https://ctf-wiki.github.io/ctf-wiki/misc/picture/png-zh/</a></p>
+</li>
+<li><h2 id="PNG隐写-IHDR"><a href="#PNG隐写-IHDR" class="headerlink" title="PNG隐写-IHDR"></a>PNG隐写-IHDR</h2></li>
+<li><p>文件头数据块IHDR:它包含有PNG文件中存储的图像数据的基本信息，由13字节组成，并作为</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DLz6Qs"><img src="https://s3.ax1x.com/2020/12/05/DLz6Qs.png" alt="DLz6Qs.png" style="zoom: 67%;" /></a></p>
 
         <p class="suffix-end">__END__</p>
         <div class="suffix-box">
@@ -109,7 +174,7 @@
         
         <div class="article-prev-next">
             
-                <a href="/2020/11/28/pwn/" class="prev-prefix">« </a> 上一篇：    <a href="/2020/11/28/pwn/" title="发布于 2020-11-28 09:42">pwn栈溢出剖析讨论（持续更新）</a>
+                <a href="/2020/11/28/pwn-stack%20overflow/" class="prev-prefix">« </a> 上一篇：    <a href="/2020/11/28/pwn-stack%20overflow/" title="发布于 2020-11-28 09:42">pwn栈溢出剖析讨论（持续更新）</a>
                 <br>
             
             
