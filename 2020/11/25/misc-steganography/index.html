@@ -142,8 +142,17 @@
 <li><p>可参考：<a target="_blank" rel="noopener" href="https://ctf-wiki.github.io/ctf-wiki/misc/picture/png-zh/">https://ctf-wiki.github.io/ctf-wiki/misc/picture/png-zh/</a></p>
 </li>
 <li><h2 id="PNG隐写-IHDR"><a href="#PNG隐写-IHDR" class="headerlink" title="PNG隐写-IHDR"></a>PNG隐写-IHDR</h2></li>
-<li><p>文件头数据块IHDR:它包含有PNG文件中存储的图像数据的基本信息，由13字节组成，并作为</p>
+<li><h3 id="工具：winhex"><a href="#工具：winhex" class="headerlink" title="工具：winhex"></a>工具：winhex</h3></li>
+<li><p>文件头数据块IHDR:它包含有PNG文件中存储的图像数据的基本信息，由13字节组成，并要作为第一个数据块出现再PNG数据流中，而且一个PNG数据流中只能有一个文件头数据块</p>
 </li>
+<li><p>其中关注的是8字节的内容</p>
+</li>
+</ul>
+<ul>
+<li>题目中经常对这两个值（即高度和宽度）做出修改，使得显示不出完整的图片，很明显的一个特征就是修改后的图片，再Windows下可以打开显示， 再Linux下会报错</li>
+</ul>
+<ul>
+<li>原因在于每个区块的CRC校验码，修改后的长款校验发生了错误，我们就可以根据CRC校验码来爆破图片正确的长和宽，然后使用winhex打开图片修改即可（有的题目不用爆破，随便改大点长或宽也可以）</li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DLz6Qs"><img src="https://s3.ax1x.com/2020/12/05/DLz6Qs.png" alt="DLz6Qs.png" style="zoom: 67%;" /></a></p>
 
