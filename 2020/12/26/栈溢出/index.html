@@ -6,7 +6,7 @@
     <meta name="referrer" content="origin">
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp">
-    <title>归档</title>
+    <title>pwn栈溢出剖析讨论（持续更新）</title>
 
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/font/LongCang.css">
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/font/Monda.css">
@@ -17,76 +17,112 @@
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/font/Rosario.css">
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/font/UbuntuMono.css">
 
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/css/archive.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/css/post.css">
+    
+        <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/css/normal.css">
+    
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/js/jquery-3.4.1.min.js"></script>
+
 <meta name="generator" content="Hexo 5.2.0"></head>
 <body>
     <a id="cover"></a>
     <div id="header">
-    <div class="header" >
+    <div class="header">
         <div class="vertical">
             <div class="inner">
-                <h1 class="header-title"></h1>
-                <h2 class="header-description" id="hitokoto"></h2>
-                <h3 class="header-info" id="hitokotoAuthor"></h3>
-                <!--
-                <h1 class="header-subtitle"></h1>
-                <p class="header-subinfo"></p>
-                -->
+                <h1 class="header-subtitle">pwn栈溢出剖析讨论（持续更新）</h1>
+                <div class="header-subinfo">
+                    <p class="article-info-text">
+                        <span>
+                            <i class="iconfont icon-time"></i> 发表时间：2020-12-26
+                        </span>
+                        
+                            <span id="/2020/12/26/栈溢出/" class="leancloud_visitors" data-flag-title="pwn栈溢出剖析讨论（持续更新）">
+                                <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
+                            </span>
+                        
+                        <span>
+                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2020/12/26/栈溢出/"></span>
+                        </span>  
+                    </p>                 
+                </div>
             </div>
         </div>
-        <a class="scroll-down" href="javascript:;" target="_self" data-offset="-45">
-            <span class="hidden">Scroll Down</span>
-            <i class="scroll-down-icon iconfont icon-return"></i>
-        </a>
+        <canvas id="articleHeaderCanvas"></canvas>
     </div>
 </div>
     <div id="container">
     <div id="content">
-          
-    <div class="articles-year">
-        <h2>2020</h2>
-        <ul class="list">
+        <div id="article">
+    <div class="toc"></div>
+    <div class="article-body">
+        <h1 id="一：环境构建"><a href="#一：环境构建" class="headerlink" title="一：环境构建"></a>一：环境构建</h1><ul>
+<li>反汇编（借助IDA工具）</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/rhIHQe"><img src="https://s3.ax1x.com/2020/12/26/rhIHQe.png" alt="rhIHQe.png" style="zoom:50%;" /></a></p>
+<ul>
+<li>调试</li>
+</ul>
+<h1 id="二-栈溢出原理："><a href="#二-栈溢出原理：" class="headerlink" title="二.栈溢出原理："></a>二.栈溢出原理：</h1><ul>
+<li><p>栈溢出指的是程序向栈中某个变量中写入的字节数超过了这个变量本身所申请的字节数，因而导致与其相邻的栈中的变量的值被改变。（<strong>栈的变量和返回地址相邻</strong>）</p>
+<p>发生栈溢出基本前提：</p>
+<ul>
+<li>程序必须向栈上写入数据</li>
+<li>写入的数据大小没有被良好地控制</li>
+</ul>
+</li>
+<li><ul>
+<li><p>栈溢出的利用方式是通过溢出存在于栈上的局部变量，从而让多出来的数据覆盖 ebp、eip 等，从而达到劫持控制流的目的。</p>
+<p>栈溢出的早期来源之一：可以看出 gets 本身是一个危险函数。它从不检查输入字符串的长度，而是以回车来判断输入是否结束，所以很容易可以导致栈溢出，</p>
+<blockquote>
+<p>历史上，<strong>莫里斯蠕虫</strong>第一种蠕虫病毒就利用了 gets 这个危险函数实现了栈溢出。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+
+        <p class="suffix-end">__END__</p>
+        <div class="suffix-box">
+            <div class="suffix-box-left">
+                <img src="https://s3.ax1x.com/2020/11/29/D6q13T.jpg" alt="此间的少年">
+            </div>
+            <div class="suffix-box-right">
+                <span class="suffix-box-title">文章作者</span>：此间的少年
+                <br>
+                <span class="suffix-box-title">文章出处</span>：<a href="/2020/12/26/%E6%A0%88%E6%BA%A2%E5%87%BA/" target="_blank">pwn栈溢出剖析讨论（持续更新）</a>
+                <br>
+                <span class="suffix-box-title">作者签名</span>：烟花巷陌，依约丹青屏障.
+                <br>
+                <span class="suffix-box-title">关于主题</span>：<a href="https://github.com/first19326/Hexo-LiveForCode" target="_blank">Hexo - Live For Code</a>
+                <br>
+                <span class="suffix-box-title">版权声明</span>：文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="BY-NC-SA" target="_blank">BY-NC-SA</a> 许可协议，转载请注明出处
+                <br>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+    <div class="article-footer">
+        
+        
+        <div class="article-prev-next">
             
-                <li>
-                    <span class="date">2020/11/28</span>
-                    <a href="/2020/11/28/pwn-stack%20overflow/" title="栈堆结构介绍及函数调用">    
-                        <span>栈堆结构介绍及函数调用</span>
-                    </a>
-                </li>
             
-                <li>
-                    <span class="date">2020/11/25</span>
-                    <a href="/2020/11/25/misc-steganography/" title="CTF隐写术，杂项解密！（持续更新中）">    
-                        <span>CTF隐写术，杂项解密！（持续更新中）</span>
-                    </a>
-                </li>
+                <a href="/2020/11/28/pwn-stack%20overflow/" class="next-prefix">» </a> 下一篇：    <a href="/2020/11/28/pwn-stack%20overflow/" title="发布于 2020-11-28 09:42">栈堆结构介绍及函数调用</a>
             
-                <li>
-                    <span class="date">2020/11/24</span>
-                    <a href="/2020/11/24/misc-basic%20coding/" title="misc-基本编码">    
-                        <span>misc-基本编码</span>
-                    </a>
-                </li>
-            
-                <li>
-                    <span class="date">2020/11/11</span>
-                    <a href="/2020/11/11/Linux%20command/" title="Linuxcommand">    
-                        <span>Linuxcommand</span>
-                    </a>
-                </li>
-            
-                <li>
-                    <span class="date">2020/11/11</span>
-                    <a href="/2020/11/11/range/" title="靶场训练">    
-                        <span>靶场训练</span>
-                    </a>
-                </li>
-            
-        </ul>
+        </div>
+    </div>
+    
+    <div class="article-comments">
+        <div class="comments-title">
+            评论列表
+        </div>
+        <div class="comments-content">
+        </div>
     </div>
 
+</div>
 
     </div>
 </div>
