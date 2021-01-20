@@ -6,7 +6,7 @@
     <meta name="referrer" content="origin">
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp">
-    <title>Live For Code</title>
+    <title>C++学习记录</title>
 
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/font/LongCang.css">
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/font/Monda.css">
@@ -17,97 +17,256 @@
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/font/Rosario.css">
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/font/UbuntuMono.css">
 
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/css/index.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/css/post.css">
+    
+        <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/css/normal.css">
+    
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/js/jquery-3.4.1.min.js"></script>
+
 <meta name="generator" content="Hexo 5.2.0"></head>
 <body>
     <a id="cover"></a>
     <div id="header">
-    <div class="header" >
+    <div class="header">
         <div class="vertical">
             <div class="inner">
-                <h1 class="header-title"></h1>
-                <h2 class="header-description" id="hitokoto"></h2>
-                <h3 class="header-info" id="hitokotoAuthor"></h3>
-                <!--
-                <h1 class="header-subtitle"></h1>
-                <p class="header-subinfo"></p>
-                -->
+                <h1 class="header-subtitle">C++学习记录</h1>
+                <div class="header-subinfo">
+                    <p class="article-info-text">
+                        <span>
+                            <i class="iconfont icon-time"></i> 发表时间：2021-01-20
+                        </span>
+                        
+                            <span id="/2021/01/20/C++学习记录/" class="leancloud_visitors" data-flag-title="C++学习记录">
+                                <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
+                            </span>
+                        
+                        <span>
+                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2021/01/20/C++学习记录/"></span>
+                        </span>  
+                    </p>                 
+                </div>
             </div>
         </div>
-        <a class="scroll-down" href="javascript:;" target="_self" data-offset="-45">
-            <span class="hidden">Scroll Down</span>
-            <i class="scroll-down-icon iconfont icon-return"></i>
-        </a>
+        <canvas id="articleHeaderCanvas"></canvas>
     </div>
 </div>
     <div id="container">
     <div id="content">
-        <div class="articles">
-    
-        <div class="article">
-            <div class="article-title">
-                <a href="/2020/10/17/The%20winter%20is%20over,%20and%20the%20Star%20River%20is%20bright/">凛冬散尽，星河长明</a>
-                
+        <div id="article">
+    <div class="toc"></div>
+    <div class="article-body">
+        <h1 id="C-基础入门"><a href="#C-基础入门" class="headerlink" title="C++基础入门"></a>C++基础入门</h1><h2 id="1-C-初识"><a href="#1-C-初识" class="headerlink" title="1.C++初识"></a>1.C++初识</h2><h3 id="1-1-第一个C-程序"><a href="#1-1-第一个C-程序" class="headerlink" title="1.1 第一个C++程序"></a>1.1 第一个C++程序</h3><p>编写一个C++程序总共分为4各步骤</p>
+<ul>
+<li><p>创建项目</p>
+</li>
+<li><p>创建文件</p>
+</li>
+<li><p>编写代码</p>
+</li>
+<li><p>运行程序</p>
+</li>
+</ul>
+<h4 id="1-1-1创建项目"><a href="#1-1-1创建项目" class="headerlink" title="1.1.1创建项目"></a>1.1.1创建项目</h4><p>​     Visual Studio是我们用来编写C++程序的主要工具，首先将其打开</p>
+<h5 id="1-创建新项目"><a href="#1-创建新项目" class="headerlink" title="1.创建新项目"></a>1.创建新项目</h5><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sRUWLT"><img src="https://s3.ax1x.com/2021/01/20/sRUWLT.png" alt="sRUWLT.png" style="zoom: 67%;" /></a></p>
+<h5 id="2-选择空项目"><a href="#2-选择空项目" class="headerlink" title="2.选择空项目"></a>2.选择空项目</h5><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sRUBdg"><img src="https://s3.ax1x.com/2021/01/20/sRUBdg.png" alt="sRUBdg.png" style="zoom: 67%;" /></a></p>
+<h5 id="3-设置项目名称和路径"><a href="#3-设置项目名称和路径" class="headerlink" title="3.设置项目名称和路径"></a>3.设置项目名称和路径</h5><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sRUyJs"><img src="https://s3.ax1x.com/2021/01/20/sRUyJs.png" alt="sRUyJs.png" style="zoom: 67%;" /></a></p>
+<h5 id="4-创建初始界面如图："><a href="#4-创建初始界面如图：" class="headerlink" title="4.创建初始界面如图："></a>4.创建初始界面如图：</h5><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sRU2Q0"><img src="https://s3.ax1x.com/2021/01/20/sRU2Q0.png" alt="sRU2Q0.png" style="zoom: 50%;" /></a></p>
+<h4 id="1-1-2-创建文件（同上，选择C-文件后设置文件路径和名称）"><a href="#1-1-2-创建文件（同上，选择C-文件后设置文件路径和名称）" class="headerlink" title="1.1.2.创建文件（同上，选择C++文件后设置文件路径和名称）"></a>1.1.2.创建文件（同上，选择C++文件后设置文件路径和名称）</h4><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sRUsij"><img src="https://s3.ax1x.com/2021/01/20/sRUsij.png" alt="sRUsij.png"></a></p>
+<h4 id="1-1-3-编写代码："><a href="#1-1-3-编写代码：" class="headerlink" title="1.1.3.编写代码："></a>1.1.3.编写代码：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;                    &#x2F;&#x2F;调用C++头文件</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line"></span><br><span class="line">	return 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="图上为C-main函数基本框架"><a href="#图上为C-main函数基本框架" class="headerlink" title="图上为C++ main函数基本框架."></a>图上为C++ main函数基本框架.</h6><h6 id="编译器中执行Hello-world指令如下："><a href="#编译器中执行Hello-world指令如下：" class="headerlink" title="编译器中执行Hello world指令如下："></a>编译器中执行Hello world指令如下：</h6><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sRUczq"><img src="https://s3.ax1x.com/2021/01/20/sRUczq.png" alt="sRUczq.png"></a></p>
+<h6 id="编译结果如下："><a href="#编译结果如下：" class="headerlink" title="编译结果如下："></a>编译结果如下：</h6><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sRURyV"><img src="https://s3.ax1x.com/2021/01/20/sRURyV.png" alt="sRURyV.png"></a></p>
+<h3 id="1-2-注释"><a href="#1-2-注释" class="headerlink" title="1.2 注释"></a>1.2 注释</h3><p><strong>作用</strong>：在代码中加一些说明和注释，方便自己或其他程序员阅读代码</p>
+<p><strong>两种格式</strong></p>
+<p>1.<strong>单行注释</strong>： //描述信息</p>
+<ul>
+<li>通常放在一行代码的上方，或者一条语句的末尾，对该行代码说明</li>
+</ul>
+<p>2.<strong>多行注释</strong>：/ * 描述信息 * /</p>
+<ul>
+<li>通常放在一段代码的上方，对该段代码做整体说明</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">提示：编译器在编译代码时，会忽略注释内容</span><br></pre></td></tr></table></figure>
+
+<h6 id="具体操作此处省略。。。。。。。。"><a href="#具体操作此处省略。。。。。。。。" class="headerlink" title="具体操作此处省略。。。。。。。。"></a>具体操作此处省略。。。。。。。。</h6><h3 id="1-3-变量"><a href="#1-3-变量" class="headerlink" title="1.3 变量"></a>1.3 变量</h3><p><strong>作用</strong>：给一段指定的内存空间起名，方便操作这段内容</p>
+<p><strong>语法</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数据类型  变量名  &#x3D;赋初值;</span><br><span class="line">如：  int a&#x3D;10;            &#x2F;&#x2F;表示为名称为a的整形变量提供一块内存空间，并将整形10存入该内存空间中</span><br></pre></td></tr></table></figure>
+
+<p><strong>变量存在的意义</strong>：方便我们管理内存空间</p>
+<h3 id="1-4-常量"><a href="#1-4-常量" class="headerlink" title="1.4 常量"></a>1.4 常量</h3><p><strong>作用：</strong>用于记录程序中不可更改的数据</p>
+<p>C++定义常量两种方式</p>
+<p>1.<strong>#define</strong>宏常量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define 常量名 常量值</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>通常在文件上方定义，</strong>表示一个常量</li>
+</ul>
+<p>2.<strong>const</strong>修饰的变量 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const 数据类型 常量名 &#x3D; 常量值</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>通常在变量定义前加关键字const，修饰该变量为常量，不可修改</strong>（const修饰的变量也称为常量）</li>
+</ul>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;1.宏常量</span><br><span class="line">#define day 7</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  cout&lt;&lt;&quot;一周里总共有&quot;&lt;&lt;day&lt;&lt;&quot;天&quot;&lt;&lt;endl;</span><br><span class="line">&#x2F;&#x2F;day &#x3D; 8;  &#x2F;&#x2F;报错，宏常量不可以修改</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;2.const修饰变量</span><br><span class="line">const int month &#x3D; 12；</span><br><span class="line">cout &lt;&lt; &quot;一年里总共有&quot;&lt;&lt;month&lt;&lt;&quot;个月份&quot;&lt;&lt;endl;</span><br><span class="line">&#x2F;&#x2F;month &#x3D; 24;   &#x2F;&#x2F;报错，常量不可以修改</span><br><span class="line"></span><br><span class="line">system(&quot;pause&quot;);</span><br><span class="line"></span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-5关键字"><a href="#1-5关键字" class="headerlink" title="1.5关键字"></a>1.5关键字</h3><p><strong>作用</strong>：关键字是C++中预先保留的单词（标识符）</p>
+<p><strong>在定义变量名或常量的时候，不要用关键字</strong></p>
+<p>C++关键字如下：</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sR0gNF"><img src="https://s3.ax1x.com/2021/01/20/sR0gNF.png" alt="sR0gNF.png" style="zoom:150%;" /></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">提示：在给变量或者常量起名的时候，不要使用C++关键字，否则会产生歧义而出错</span><br><span class="line">如：int int &#x3D; 10；</span><br><span class="line">&#x2F;&#x2F;本义想定义名为int的整型变量，但该名称与int关键字相同会出错</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-6标识符命名规则"><a href="#1-6标识符命名规则" class="headerlink" title="1.6标识符命名规则"></a>1.6标识符命名规则</h3><p><strong>作用</strong>：C++规定给标识符（变量、常量）命名时，有一套自己的规则</p>
+<ul>
+<li><p>标识符不能是关键字</p>
+</li>
+<li><p>标识符只能由字母、数字、下划线组成</p>
+</li>
+<li><p>第一个字符必须为字母或下划线</p>
+</li>
+<li><p>标识符中字母区分大小写</p>
+</li>
+</ul>
+<h6 id="建议：给标识符命名时，争取做到见名知意的效果，方便自己和他人的阅读"><a href="#建议：给标识符命名时，争取做到见名知意的效果，方便自己和他人的阅读" class="headerlink" title="建议：给标识符命名时，争取做到见名知意的效果，方便自己和他人的阅读"></a>建议：给标识符命名时，争取做到见名知意的效果，方便自己和他人的阅读</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">如：要表示学上档案中某个学生信息，</span><br><span class="line">建议定义结构体</span><br><span class="line">tpyedef struct a&#123;</span><br><span class="line">  int num;</span><br><span class="line">  char name[10];</span><br><span class="line">  ......</span><br><span class="line">&#125;student;</span><br><span class="line">如上代码定义了学生类型的结构体变量，表明存储的是学生信息。</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <p class="suffix-end">__END__</p>
+        <div class="suffix-box">
+            <div class="suffix-box-left">
+                <img src="https://s3.ax1x.com/2020/11/29/D6q13T.jpg" alt="此间的少年">
             </div>
-            <div class="article-abstract">
-                
+            <div class="suffix-box-right">
+                <span class="suffix-box-title">文章作者</span>：此间的少年
+                <br>
+                <span class="suffix-box-title">文章出处</span>：<a href="/2021/01/20/C++%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" target="_blank">C++学习记录</a>
+                <br>
+                <span class="suffix-box-title">作者签名</span>：烟花巷陌，依约丹青屏障.
+                <br>
+                <span class="suffix-box-title">关于主题</span>：<a href="https://github.com/first19326/Hexo-LiveForCode" target="_blank">Hexo - Live For Code</a>
+                <br>
+                <span class="suffix-box-title">版权声明</span>：文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="BY-NC-SA" target="_blank">BY-NC-SA</a> 许可协议，转载请注明出处
+                <br>
             </div>
-            <div class="clear"></div>
-            <div class="article-info">
-                <span>
-                    <i class="iconfont icon-time"></i> 发表时间：2020-10-17
-                </span>
-                
-                    <span id="/2020/10/17/The winter is over, and the Star River is bright/" class="leancloud_visitors" data-flag-title="凛冬散尽，星河长明">
-                        <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
-                    </span>
-                
-                <span>
-                    <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2020/10/17/The winter is over, and the Star River is bright/"></span>
-                </span>
-            </div>
-            <div class="clear"></div>     
+            <div style="clear: both;"></div>
         </div>
-    
-        <div class="article">
-            <div class="article-title">
-                <a href="/2020/01/01/HelloWorld/">Hello World</a>
-                
-            </div>
-            <div class="article-abstract">
-                
-                    摘要：Hexo相关资料以及简单的使用教程.
-                    <a href="/2020/01/01/HelloWorld/">阅读全文</a>
-                
-            </div>
-            <div class="clear"></div>
-            <div class="article-info">
-                <span>
-                    <i class="iconfont icon-time"></i> 发表时间：2020-01-01
-                </span>
-                
-                    <span id="/2020/01/01/HelloWorld/" class="leancloud_visitors" data-flag-title="Hello World">
-                        <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
-                    </span>
-                
-                <span>
-                    <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2020/01/01/HelloWorld/"></span>
-                </span>
-            </div>
-            <div class="clear"></div>     
+    </div>
+    <div class="article-footer">
+        
+        
+        <div class="article-prev-next">
+            
+            
+                <a href="/2020/12/26/%E6%A0%88%E6%BA%A2%E5%87%BA/" class="next-prefix">» </a> 下一篇：    <a href="/2020/12/26/%E6%A0%88%E6%BA%A2%E5%87%BA/" title="发布于 2020-12-26 04:27">pwn栈溢出剖析讨论（持续更新）</a>
+            
         </div>
+    </div>
     
-    
-        <div class="pagination-bottom">
-            <div class="pagination">
-                
-                    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-                
-            </div>
+    <div class="article-comments">
+        <div class="comments-title">
+            评论列表
         </div>
-    
+        <div class="comments-content">
+        </div>
+    </div>
+
 </div>
 
     </div>
