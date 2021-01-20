@@ -6,7 +6,7 @@
     <meta name="referrer" content="origin">
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp">
-    <title>C++学习记录</title>
+    <title>C及C++学习记录</title>
 
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/font/LongCang.css">
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/hexo-liveforcode@master/static/font/Monda.css">
@@ -31,14 +31,14 @@
     <div class="header">
         <div class="vertical">
             <div class="inner">
-                <h1 class="header-subtitle">C++学习记录</h1>
+                <h1 class="header-subtitle">C及C++学习记录</h1>
                 <div class="header-subinfo">
                     <p class="article-info-text">
                         <span>
                             <i class="iconfont icon-time"></i> 发表时间：2021-01-20
                         </span>
                         
-                            <span id="/2021/01/20/C++学习记录/" class="leancloud_visitors" data-flag-title="C++学习记录">
+                            <span id="/2021/01/20/C++学习记录/" class="leancloud_visitors" data-flag-title="C及C++学习记录">
                                 <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
                             </span>
                         
@@ -57,7 +57,7 @@
         <div id="article">
     <div class="toc"></div>
     <div class="article-body">
-        <h1 id="C-基础入门"><a href="#C-基础入门" class="headerlink" title="C++基础入门"></a>C++基础入门</h1><h2 id="1-C-初识"><a href="#1-C-初识" class="headerlink" title="1.C++初识"></a>1.C++初识</h2><h3 id="1-1-第一个C-程序"><a href="#1-1-第一个C-程序" class="headerlink" title="1.1 第一个C++程序"></a>1.1 第一个C++程序</h3><p>编写一个C++程序总共分为4各步骤</p>
+        <h1 id="1-C-基础入门"><a href="#1-C-基础入门" class="headerlink" title="1.C++基础入门"></a>1.C++基础入门</h1><h2 id="1-C-初识"><a href="#1-C-初识" class="headerlink" title="1.C++初识"></a>1.C++初识</h2><h3 id="1-1-第一个C-程序"><a href="#1-1-第一个C-程序" class="headerlink" title="1.1 第一个C++程序"></a>1.1 第一个C++程序</h3><p>编写一个C++程序总共分为4各步骤</p>
 <ul>
 <li><p>创建项目</p>
 </li>
@@ -133,101 +133,50 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<h6 id="类同C学习，此处省略"><a href="#类同C学习，此处省略" class="headerlink" title="类同C学习，此处省略"></a>类同C学习，此处省略</h6><p>。。。。。。。。。。。。。。。。。。。。。。。。。。。。</p>
+<h1 id="2-C-核心编程："><a href="#2-C-核心编程：" class="headerlink" title="2.C++核心编程："></a>2.C++核心编程：</h1><h2 id="1-内存分区模型："><a href="#1-内存分区模型：" class="headerlink" title="1.内存分区模型："></a>1.内存分区模型：</h2><p>C++程序在执行时，将内存大小划分为<strong>4个区域</strong></p>
+<ul>
+<li><p>代码区：存放函数的二进制代码，由操作系统进行管理的       </p>
+</li>
+<li><p>全局区：存放全局变量和静态变量以及常量</p>
+</li>
+<li><p>栈区：由编译器自动分配释放，存放函数的参数值，局部变量等</p>
+</li>
+<li><p>堆区：由程序员分配和释放，若程序员不释放，程序结束时由操作系统回收</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">代码区和全局区在程序运行前即划分，栈区和堆区在程序运行后划分</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>内存四区的意义</strong>：</p>
+<p>不同区域存放的数据，赋予不同的生命周期，给我们更大的灵活编程。</p>
+<h3 id="1-1-程序运行前"><a href="#1-1-程序运行前" class="headerlink" title="1.1 程序运行前"></a>1.1 程序运行前</h3><p>在程序编译后，生成了exe可执行程序，<strong>未执行该程序</strong>前分为两个区域</p>
+<p><strong>代码区</strong>：</p>
+<p>​      存放CPU执行的机器指令</p>
+<p>​      代码区是<strong>共享</strong>的，共享的目的是对于频繁被执行的程序，只需要在内存中有一份代码即可</p>
+<p>​      代码区是<strong>只读</strong>的，使其只读的原因使防止程序意外地修改了它的指令</p>
+<p><strong>全局区</strong>：</p>
+<p>​      全局变量和静态变量存放在此</p>
+<p>​       全局区还包含了常量区，字符串常量和其他常量（全局常量）也存在于此</p>
+<h6 id="该区域地数据在程序结束后由操作系统释放"><a href="#该区域地数据在程序结束后由操作系统释放" class="headerlink" title="该区域地数据在程序结束后由操作系统释放"></a>该区域地数据在程序结束后由操作系统释放</h6><p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//全局变量</span></span><br><span class="line"><span class="keyword">int</span> g_a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> g_b = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//全局变量</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> c_g_a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> c_g_b = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//局部变量</span></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//打印地址</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;局部变量a地址为：&quot;</span> &lt;&lt; (<span class="keyword">int</span>)&amp;a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;局部变量a地址为：&quot;</span> &lt;&lt; (<span class="keyword">int</span>)&amp;a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;全局变量g_a地址为：&quot;</span> &lt;&lt; (<span class="keyword">int</span>)&amp;g_a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;全局变量g_b地址为：&quot;</span> &lt;&lt; (<span class="keyword">int</span>)&amp;g_b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//静态变量</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> s_a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> s_b = <span class="number">10</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;静态变量s_a地址为：&quot;</span> &lt;&lt; (<span class="keyword">int</span>)&amp;s_a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;静态变量s_b地址为：&quot;</span> &lt;&lt; (<span class="keyword">int</span>)&amp;s_b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;字符串常量地址为：&quot;</span> &lt;&lt; (<span class="keyword">int</span>)&amp;<span class="string">&quot;hello world&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;字符串常量地址为：&quot;</span> &lt;&lt; (<span class="keyword">int</span>)&amp;<span class="string">&quot;hello world1&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;全局常量c_g_a地址为：&quot;</span> &lt;&lt; (<span class="keyword">int</span>)&amp;c_g_a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;局部变量c_g_b地址为：&quot;</span> &lt;&lt; (<span class="keyword">int</span>)&amp;bc_g_ &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> c_l_a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> c_l_b = <span class="number">10</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;局部变量c_l_a地址为：&quot;</span> &lt;&lt; (<span class="keyword">int</span>)&amp;c_l_a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;局部变量c_l_b地址为：&quot;</span> &lt;&lt; (<span class="keyword">int</span>)&amp;c_l_b_ &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>打印结果：</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sW64yQ"><img src="https://s3.ax1x.com/2021/01/20/sW64yQ.png" alt="sW64yQ.png" style="zoom:150%;" /></a></p>
+<p><strong>总结</strong>：</p>
+<ul>
+<li><p>C++中在程序运行前分为全局区和代码区</p>
+</li>
+<li><p>代码区的特点是共享和只读</p>
+</li>
+<li><p>全局区中存放全局变量、静态变量、常量</p>
+</li>
+<li><p>常量区中存放const修饰地全局变量和字符串常量</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sW6hQg"><img src="https://s3.ax1x.com/2021/01/20/sW6hQg.png" alt="sW6hQg.png"></a></p>
+<h3 id="1-2程序运行后"><a href="#1-2程序运行后" class="headerlink" title="1.2程序运行后"></a>1.2程序运行后</h3>
         <p class="suffix-end">__END__</p>
         <div class="suffix-box">
             <div class="suffix-box-left">
@@ -236,7 +185,7 @@
             <div class="suffix-box-right">
                 <span class="suffix-box-title">文章作者</span>：此间的少年
                 <br>
-                <span class="suffix-box-title">文章出处</span>：<a href="/2021/01/20/C++%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" target="_blank">C++学习记录</a>
+                <span class="suffix-box-title">文章出处</span>：<a href="/2021/01/20/C++%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" target="_blank">C及C++学习记录</a>
                 <br>
                 <span class="suffix-box-title">作者签名</span>：烟花巷陌，依约丹青屏障.
                 <br>
