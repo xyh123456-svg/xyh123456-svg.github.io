@@ -57,55 +57,47 @@
         <div id="article">
     <div class="toc"></div>
     <div class="article-body">
-        <h1 id="一：环境构建"><a href="#一：环境构建" class="headerlink" title="一：环境构建"></a>一：环境构建</h1><ul>
-<li>反汇编（借助IDA工具）</li>
-</ul>
+        <h1 id="一：环境构建"><a href="#一：环境构建" class="headerlink" title="一：环境构建"></a>一：环境构建</h1><p>🙃    反汇编（借助IDA工具）</p>
 <p><a target="_blank" rel="noopener" href="https://imgchr.com/i/rhIHQe"><img src="https://s3.ax1x.com/2020/12/26/rhIHQe.png" alt="rhIHQe.png" style="zoom:50%;" /></a></p>
-<ul>
-<li>调试</li>
-</ul>
-<h1 id="二-栈溢出原理："><a href="#二-栈溢出原理：" class="headerlink" title="二.栈溢出原理："></a>二.栈溢出原理：</h1><h2 id="堆栈溢出"><a href="#堆栈溢出" class="headerlink" title="堆栈溢出"></a>堆栈溢出</h2><h3 id="内存中的堆与栈"><a href="#内存中的堆与栈" class="headerlink" title="内存中的堆与栈"></a>内存中的堆与栈</h3><p>事实上，<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%A0%86/20606834">堆</a>和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%A0%88/12808149">栈</a>是不同的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/1450">数据结构</a>概念，堆栈溢出也可细化为堆溢出和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%A0%88%E6%BA%A2%E5%87%BA/8538051">栈溢出</a>两种。栈有两个特性：只能从栈的顶端存取数据；数据的存取符合后进先出的原则。所谓后进先出，其实就如同自助餐中餐盘在桌面上一个一个往上叠放，在取用时先拿最上面的餐盘，这是典型的堆栈概念的应用。 <strong>堆是一种树结构，准确地说是一个<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91/7773232">完全二叉树</a>。</strong></p>
-<p>在内存中，当一个可执行程序被装入到内存时，主要包括两个部分 ：代码和数据。代码会被装入到内存中的代码区，数据区又由 3 部分组成 ：①全局变量：根据其是否有初始值，被装入到内存中的未初始化数据区和初始化数据区；②局部变量：在函数调用发生时存放在栈中；③动态内存空间：在程序运行时申请的动态内存空间存放在堆中。 </p>
-<p>栈区(stack)是后进先出的结构，向低地址进行扩展，是一块连续的内存区域，栈顶的地址和栈的最大容量是系统预先规定的，只要栈的剩余空间大于所申请空间，系统将为程序提供内存，否则将报异常来提示栈发生溢出。栈空间是系统自动分配、释放的，存放函数的参数值、局部变量的值等。一般来说，进栈的顺序首先为主函数中的下一条指令（函数调用语句的下一条可执行语句）的地址先进栈，其次是参数由右往左依次进栈，最后是函数中的局部变量进栈，出栈顺序与进栈顺序相反，对于程序来说，出栈就意味着函数执行完毕，函数空间将被系统完全释放掉。 </p>
+<p>😄    调试</p>
+<h1 id="二-堆栈溢出原理："><a href="#二-堆栈溢出原理：" class="headerlink" title="二.堆栈溢出原理："></a>二.堆栈溢出原理：</h1><h2 id="堆栈溢出"><a href="#堆栈溢出" class="headerlink" title="堆栈溢出"></a>堆栈溢出</h2><h3 id="🎁内存中的堆与栈"><a href="#🎁内存中的堆与栈" class="headerlink" title="🎁内存中的堆与栈"></a>🎁内存中的堆与栈</h3><p>🥓事实上，<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%A0%86/20606834">堆</a>和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%A0%88/12808149">栈</a>是不同的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/1450">数据结构</a>概念，堆栈溢出也可细化为堆溢出和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%A0%88%E6%BA%A2%E5%87%BA/8538051">栈溢出</a>两种。栈有两个特性：只能从栈的顶端存取数据；数据的存取符合后进先出的原则。所谓后进先出，其实就如同自助餐中餐盘在桌面上一个一个往上叠放，在取用时先拿最上面的餐盘，这是典型的堆栈概念的应用。 <strong>堆是一种树结构，准确地说是一个<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91/7773232">完全二叉树</a>。</strong></p>
+<p>🍿在内存中，当一个可执行程序被装入到内存时，主要包括两个部分 ：代码和数据。代码会被装入到内存中的代码区，数据区又由 3 部分组成 ：①全局变量：根据其是否有初始值，被装入到内存中的未初始化数据区和初始化数据区；②局部变量：在函数调用发生时存放在栈中；③动态内存空间：在程序运行时申请的动态内存空间存放在堆中。 </p>
+<p>🎈栈区(stack)是后进先出的结构，向低地址进行扩展，是一块连续的内存区域，栈顶的地址和栈的最大容量是系统预先规定的，只要栈的剩余空间大于所申请空间，系统将为程序提供内存，否则将报异常来提示栈发生溢出。栈空间是系统自动分配、释放的，存放函数的参数值、局部变量的值等。一般来说，进栈的顺序首先为主函数中的下一条指令（函数调用语句的下一条可执行语句）的地址先进栈，其次是参数由右往左依次进栈，最后是函数中的局部变量进栈，出栈顺序与进栈顺序相反，对于程序来说，出栈就意味着函数执行完毕，函数空间将被系统完全释放掉。 </p>
 <p><a target="_blank" rel="noopener" href="https://baike.baidu.com/pic/%E5%A0%86%E6%A0%88%E6%BA%A2%E5%87%BA/1231765/0/10dfa9ec8a136327ff58886a9e8fa0ec08fac736?fr=lemma&ct=single"><img src="https://bkimg.cdn.bcebos.com/pic/10dfa9ec8a136327ff58886a9e8fa0ec08fac736?x-bce-process=image/resize,m_lfit,w_220,h_220,limit_1" alt="内存中的数据区与代码区"></a>内存中的数据区与代码区 </p>
-<p>堆区一般由程序员自己申请，并指明大小，程序最后进行释放，若程序员不释放，程序结束时可能由操作系统回收（注意，如果是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/C%2FC%2B%2B/6824246">C/C++</a>语言，程序不进行对空间回收，而<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Java/85979">Java</a>语言中有专门的垃圾回收器进行回收），堆区与数据结构中的堆有所不同，分配方式类似于链表。堆区向高地址扩展。</p>
-<h3 id="溢出原理"><a href="#溢出原理" class="headerlink" title="溢出原理"></a>溢出原理</h3><p>堆栈溢出是说堆区和栈区的溢出，二者同属于<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BC%93%E5%86%B2%E5%8C%BA%E6%BA%A2%E5%87%BA/678453">缓冲区溢出</a>。从上面关于堆区和栈区的解释可以看出，一旦程序确定，堆栈内存空间的大小就是固定的，当数据已经把堆栈的空间占满时，再往里面存放数据就会超出容量，发生上溢；当堆栈中的已经没有数据时，再取数据就无法取到了，发生下溢。需要注意的是，栈分为<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%A1%BA%E5%BA%8F%E6%A0%88/23162209">顺序栈</a>和链栈，链栈不会发生溢出，顺序栈会发生溢出。</p>
-<ul>
-<li><p>栈溢出指的是程序向栈中某个变量中写入的字节数超过了这个变量本身所申请的字节数，因而导致与其相邻的栈中的变量的值被改变。（<strong>栈的变量和返回地址相邻</strong>）</p>
+<p>🥙堆区一般由程序员自己申请，并指明大小，程序最后进行释放，若程序员不释放，程序结束时可能由操作系统回收（注意，如果是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/C%2FC%2B%2B/6824246">C/C++</a>语言，程序不进行对空间回收，而<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Java/85979">Java</a>语言中有专门的垃圾回收器进行回收），堆区与数据结构中的堆有所不同，分配方式类似于链表。堆区向高地址扩展。</p>
+<h2 id="溢出原理"><a href="#溢出原理" class="headerlink" title="溢出原理"></a>溢出原理</h2><p>🛬堆栈溢出是说堆区和栈区的溢出，二者同属于<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BC%93%E5%86%B2%E5%8C%BA%E6%BA%A2%E5%87%BA/678453">缓冲区溢出</a>。从上面关于堆区和栈区的解释可以看出，一旦程序确定，堆栈内存空间的大小就是固定的，当数据已经把堆栈的空间占满时，再往里面存放数据就会超出容量，发生上溢；当堆栈中的已经没有数据时，再取数据就无法取到了，发生下溢。需要注意的是，栈分为<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%A1%BA%E5%BA%8F%E6%A0%88/23162209">顺序栈</a>和链栈，链栈不会发生溢出d，顺序栈会发生溢出。</p>
+<p>🚅堆栈溢出指的是程序向栈中某个变量中写入的字节数超过了这个变量本身所申请的字节数，因而导致与其相邻的栈中的变量的值被改变。（<strong>栈的变量和返回地址相邻</strong>）</p>
 <p>发生栈溢出基本前提：</p>
-<ul>
-<li>程序必须向栈上写入数据</li>
-<li>写入的数据大小没有被良好地控制</li>
-</ul>
-</li>
-<li><p>栈溢出的利用方式是通过溢出存在于栈上的局部变量，从而让多出来的数据覆盖 ebp、eip 等，从而达到劫持控制流的目的。</p>
+<p>🥠程序必须向栈上写入数据</p>
+<p>🥩写入的数据大小没有被良好地控制</p>
+<p>🍖栈溢出的利用方式是通过溢出存在于栈上的局部变量，从而让多出来的数据覆盖 ebp、eip 等，从而达到劫持控制流的目的。</p>
 <p>栈溢出的早期来源之一：可以看出 gets 本身是一个危险函数。它从不检查输入字符串的长度，而是以回车来判断输入是否结束，所以很容易可以导致栈溢出，</p>
 <blockquote>
 <p>历史上，<strong>莫里斯蠕虫</strong>第一种蠕虫病毒就利用了 gets 这个危险函数实现了栈溢出。</p>
 </blockquote>
-</li>
-</ul>
-<h2 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h2><p>堆栈尺寸设置过小、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%80%92%E5%BD%92/1740695">递归</a>调用过深、函数调用层次过深等程序设计不当之处都可能导致堆栈溢出。</p>
+<h2 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h2><p>🚒堆栈尺寸设置过小、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%80%92%E5%BD%92/1740695">递归</a>调用过深、函数调用层次过深等程序设计不当之处都可能导致堆栈溢出。</p>
 <p>1、 堆栈尺寸设置过小</p>
-<p>由堆栈溢出的定义便可知，堆栈尺寸设置过小时，其能储存的内容过小，容易发生溢出。 </p>
+<p>🚖由堆栈溢出的定义便可知，堆栈尺寸设置过小时，其能储存的内容过小，容易发生溢出。 </p>
 <p>2、递归层次太深或函数调用层次过深导致堆栈溢出</p>
-<p>调用函数时，系统将为调用者构造一个由参数表返回地址组成的活动记录，并将其押入到由系统提供的运行时刻栈的栈顶，然后将程序的控制权转移到被调函数。若被调函数有局部变量，则在运行时刻，在栈的栈顶也要为其分配相应的空间，因此，活动记录和这些局部变量形成了一个可供被调函数使用的活动结构。被调函数执行完毕时，系统将运行时刻栈的栈顶的活动结构退栈，并根据退栈的活动结构中所保存的返回地址将程序的控制权转移给调用者继续执行。由此可见，当递归层次太深时或者函数调用层次过深时会产生大量的活动记录和局部变量，当超过栈的空间长度时，即发生溢出。</p>
-<p>例如C/C++语言中的无限递归：</p>
+<p>🚛调用函数时，系统将为调用者构造一个由参数表返回地址组成的活动记录，并将其押入到由系统提供的运行时刻栈的栈顶，然后将程序的控制权转移到被调函数。若被调函数有局部变量，则在运行时刻，在栈的栈顶也要为其分配相应的空间，因此，活动记录和这些局部变量形成了一个可供被调函数使用的活动结构。被调函数执行完毕时，系统将运行时刻栈的栈顶的活动结构退栈，并根据退栈的活动结构中所保存的返回地址将程序的控制权转移给调用者继续执行。由此可见，当递归层次太深时或者函数调用层次过深时会产生大量的活动记录和局部变量，当超过栈的空间长度时，即发生溢出。</p>
+<p>🚎例如C/C++语言中的无限递归：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>` `foo()`</span><br><span class="line">    `&#123;``</span><br><span class="line">        ``<span class="keyword">return</span>` `foo()  ``<span class="comment">//重复无限的自我调用``</span></span><br><span class="line">     &#125;` </span><br><span class="line">    `(define (foo) (foo)) c``<span class="comment">//这样定义会造成死循环，但不会导致堆栈溢出`</span></span><br><span class="line">    `(define (foo) (+(foo)<span class="number">1</span>)) ``<span class="comment">//这样的定义会产生堆栈溢出</span></span><br></pre></td></tr></table></figure>
 
+
+
 <p>3、动态申请空间使用之后没有释放</p>
-<p>如果是C语言，由于没有垃圾资源自动回收机制，因此，需要程序主动释放已经不再使用的动态地址空间，如果不释放，程序结束后该部分空间依然存在，还可以继续访问，也就是说这部分依然占据着堆空间，剩余的堆空间减少，就可能造成堆区溢出。 [3] 而如果是Java语言则因为有专门的垃圾回收器回收则不会有此问题。</p>
-<h2 id="溢出危害"><a href="#溢出危害" class="headerlink" title="溢出危害"></a>溢出危害</h2><p>从小处看，堆栈溢出会改变临近堆栈的空间中的内容，从而导致程序运行异常，发生故障；从大处看，堆栈溢出和计算机网络安全密切相关。堆栈溢出攻击是计算机被攻击的最为常见的一种形式，远程网络的攻击绝大多数是针对堆栈溢出的漏洞，这种攻击可以使得一个匿名的Internet用户有机会获得一台主机的部分或全部控制权。 </p>
-<h3 id="一般后果"><a href="#一般后果" class="headerlink" title="一般后果"></a>一般后果</h3><p>堆栈溢出时会访问不存在的RAM空间，造成代码跑飞，这时无法得到溢出时的上下文数据，也无法对后续的程序修改提供有用信息。</p>
-<h3 id="安全威胁"><a href="#安全威胁" class="headerlink" title="安全威胁"></a>安全威胁</h3><p>堆栈溢出常见的攻击类型有：修改函数的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BF%94%E5%9B%9E%E5%9C%B0%E5%9D%80/12734794">返回地址</a>，使其指向攻击代码，当函数调用结束时程序跳转到攻击者设定的地址而不是原先的地址，修改函数<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%8C%87%E9%92%88/2878304">指针</a>，长跳转<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BC%93%E5%86%B2%E5%8C%BA/4830555">缓冲区</a>来找到一个可供溢出的缓冲区。</p>
-<p>攻击者通过缓冲区溢出来重写存储在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BF%94%E5%9B%9E%E5%9C%B0%E5%9D%80/12734794">返回地址</a>内的值从而达到控制程序的执行流程的目的。程序函数就像是一个大程序中的小程序。它是相对独立的，对传给它的数据做相应的处理然后将处理的结果返回给主函数。因为数据在一个函数内进行处理，因此它用栈作为数据的临时存储区域。当一个程序调用函数时，它将所有的数据压栈，包括返回地址，如图所示</p>
+<p>🚆如果是C语言，由于没有垃圾资源自动回收机制，因此，需要程序主动释放已经不再使用的动态地址空间，如果不释放，程序结束后该部分空间依然存在，还可以继续访问，也就是说这部分依然占据着堆空间，剩余的堆空间减少，就可能造成堆区溢出。 [3] 而如果是Java语言则因为有专门的垃圾回收器回收则不会有此问题。</p>
+<h2 id="溢出危害"><a href="#溢出危害" class="headerlink" title="溢出危害"></a>溢出危害</h2><p>🚜从小处看，堆栈溢出会改变临近堆栈的空间中的内容，从而导致程序运行异常，发生故障；从大处看，堆栈溢出和计算机网络安全密切相关。堆栈溢出攻击是计算机被攻击的最为常见的一种形式，远程网络的攻击绝大多数是针对堆栈溢出的漏洞，这种攻击可以使得一个匿名的Internet用户有机会获得一台主机的部分或全部控制权。 </p>
+<h3 id="一般后果"><a href="#一般后果" class="headerlink" title="一般后果"></a>一般后果</h3><p>🛵堆栈溢出时会访问不存在的RAM空间，造成代码跑飞，这时无法得到溢出时的上下文数据，也无法对后续的程序修改提供有用信息。</p>
+<h3 id="安全威胁"><a href="#安全威胁" class="headerlink" title="安全威胁"></a>安全威胁</h3><p>🚓堆栈溢出常见的攻击类型有：修改函数的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BF%94%E5%9B%9E%E5%9C%B0%E5%9D%80/12734794">返回地址</a>，使其指向攻击代码，当函数调用结束时程序跳转到攻击者设定的地址而不是原先的地址，修改函数<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%8C%87%E9%92%88/2878304">指针</a>，长跳转<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BC%93%E5%86%B2%E5%8C%BA/4830555">缓冲区</a>来找到一个可供溢出的缓冲区。</p>
+<p>🚌攻击者通过缓冲区溢出来重写存储在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BF%94%E5%9B%9E%E5%9C%B0%E5%9D%80/12734794">返回地址</a>内的值从而达到控制程序的执行流程的目的。程序函数就像是一个大程序中的小程序。它是相对独立的，对传给它的数据做相应的处理然后将处理的结果返回给主函数。因为数据在一个函数内进行处理，因此它用栈作为数据的临时存储区域。当一个程序调用函数时，它将所有的数据压栈，包括返回地址，如图所示</p>
 <p><a target="_blank" rel="noopener" href="https://baike.baidu.com/pic/%E5%A0%86%E6%A0%88%E6%BA%A2%E5%87%BA/1231765/0/11385343fbf2b211db1bbd17c58065380cd78eb5?fr=lemma&ct=single"><img src="https://bkimg.cdn.bcebos.com/pic/11385343fbf2b211db1bbd17c58065380cd78eb5?x-bce-process=image/resize,m_lfit,w_250,h_250,limit_1" alt="发生函数调用时堆栈的情况"></a>发生函数调用时堆栈的情况 </p>
-<p>。当函数被调用时，指令<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%8C%87%E9%92%88/2878304">指针</a>指向的就是函数的返回地址。这一点很重要，因为当被调用函数执行结束以后，主程序要回到被调用函数的返回地址处，接着执行下一条指令。返回地址存储在RET中，当被调用函数执行结束，该返回地址传递给指令指针，以便主函数能够回到函数调用之前的地址继续执行。如果攻击者能够使缓冲区溢出并且重写存储在RET中的值，将恶意代码的地址赋值给RET，那么指令指针将指向恶意代码，从而执行恶意代码。</p>
+<p>🚔当函数被调用时，指令<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%8C%87%E9%92%88/2878304">指针</a>指向的就是函数的返回地址。这一点很重要，因为当被调用函数执行结束以后，主程序要回到被调用函数的返回地址处，接着执行下一条指令。返回地址存储在RET中，当被调用函数执行结束，该返回地址传递给指令指针，以便主函数能够回到函数调用之前的地址继续执行。如果攻击者能够使缓冲区溢出并且重写存储在RET中的值，将恶意代码的地址赋值给RET，那么指令指针将指向恶意代码，从而执行恶意代码。</p>
 <p><a target="_blank" rel="noopener" href="https://baike.baidu.com/pic/%E5%A0%86%E6%A0%88%E6%BA%A2%E5%87%BA/1231765/0/71cf3bc79f3df8dc5f709fc8c211728b4710281d?fr=lemma&ct=single"><img src="https://bkimg.cdn.bcebos.com/pic/71cf3bc79f3df8dc5f709fc8c211728b4710281d?x-bce-process=image/resize,m_lfit,w_250,h_250,limit_1" alt="利用堆栈溢出攻击原理示意图"></a>利用堆栈溢出攻击原理示意图 </p>
-<p>堆是程序中动态分配的内存空间，因为程序在执行前所需要的内存数量是未知的，因此堆内存在程序需要时进行动态分配，不需要时进行动态释放。堆和栈的主要区别在于，堆没有像栈那样的返回地址，这使得在栈溢出中用于控制程序执行流程的相关技术不可用。堆溢出可能导致重写数据或者指向其他函数的指针。这样，攻击者可以重写这些指针使其指向恶意代码，而不是指向原来的内存区域。</p>
-<p>利用堆栈溢出攻击计算机的最典型的例子是1988年利用fingerd漏洞进行攻击的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%A0%95%E8%99%AB/4454380">蠕虫</a>病毒。</p>
-<h2 id="防范措施"><a href="#防范措施" class="headerlink" title="防范措施"></a>防范措施</h2><p>通常的代码要设置堆栈缓冲区，最好能检测堆栈运行形况，设置堆栈溢出检测算法。对于递归引起的堆栈溢出，可以采用循环处理。 </p>
-<p>针对堆栈溢出可能造成的计算机安全问题，通常有以下这些防范措施：</p>
+<p>🚲堆是程序中动态分配的内存空间，因为程序在执行前所需要的内存数量是未知的，因此堆内存在程序需要时进行动态分配，不需要时进行动态释放。堆和栈的主要区别在于，堆没有像栈那样的返回地址，这使得在栈溢出中用于控制程序执行流程的相关技术不可用。堆溢出可能导致重写数据或者指向其他函数的指针。这样，攻击者可以重写这些指针使其指向恶意代码，而不是指向原来的内存区域。</p>
+<p>🚍利用堆栈溢出攻击计算机的最典型的例子是1988年利用fingerd漏洞进行攻击的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%A0%95%E8%99%AB/4454380">蠕虫</a>病毒。</p>
+<h2 id="防范措施"><a href="#防范措施" class="headerlink" title="防范措施"></a>防范措施</h2><p>🍩通常的代码要设置堆栈缓冲区，最好能检测堆栈运行形况，设置堆栈溢出检测算法。对于递归引起的堆栈溢出，可以采用循环处理。 </p>
+<p>🥧针对堆栈溢出可能造成的计算机安全问题，通常有以下这些防范措施：</p>
 <p>（1） 强制按照正确的规则写代码</p>
 <p>（2） 通过<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/192">操作系统</a>使得缓冲区不可执行，从而阻止攻击者植入攻击代码。但由于攻击者并不一定要通过植入代码来实现攻击，同时<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/linux/27050">linux</a>在信号传递和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/GCC/17570">GCC</a>的在线重用都使用了可执行堆栈的属性，因此该方法依然有一定弱点。</p>
 <p>（3） 利用<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BC%96%E8%AF%91%E5%99%A8/8853067">编译器</a>的边界检查来实现缓冲区的保护。该方法使得缓冲区溢出不可能出现，完全消除了缓冲区溢出的威胁，但代价较大，如性能速度变慢。</p>
