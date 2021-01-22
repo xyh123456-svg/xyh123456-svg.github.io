@@ -58,16 +58,10 @@
     <div class="toc"></div>
     <div class="article-body">
         <h1 id="1-C-基础入门"><a href="#1-C-基础入门" class="headerlink" title="1.C++基础入门"></a>1.C++基础入门</h1><h2 id="1-C-初识"><a href="#1-C-初识" class="headerlink" title="1.C++初识"></a>1.C++初识</h2><h3 id="1-1-第一个C-程序"><a href="#1-1-第一个C-程序" class="headerlink" title="1.1 第一个C++程序"></a>1.1 第一个C++程序</h3><p>编写一个C++程序总共分为4各步骤</p>
-<ul>
-<li><p>创建项目</p>
-</li>
-<li><p>创建文件</p>
-</li>
-<li><p>编写代码</p>
-</li>
-<li><p>运行程序</p>
-</li>
-</ul>
+<p>:kissing_smiling_eyes:   创建项目</p>
+<p>:smile:  ​ 创建文件</p>
+<p>:smiley:   编写代码</p>
+<p>:sweat_smile:   运行程序</p>
 <h4 id="1-1-1创建项目"><a href="#1-1-1创建项目" class="headerlink" title="1.1.1创建项目"></a>1.1.1创建项目</h4><p>​     Visual Studio是我们用来编写C++程序的主要工具，首先将其打开</p>
 <h5 id="1-创建新项目"><a href="#1-创建新项目" class="headerlink" title="1.创建新项目"></a>1.创建新项目</h5><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sRUWLT"><img src="https://s3.ax1x.com/2021/01/20/sRUWLT.png" alt="sRUWLT.png" style="zoom: 67%;" /></a></p>
 <h5 id="2-选择空项目"><a href="#2-选择空项目" class="headerlink" title="2.选择空项目"></a>2.选择空项目</h5><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sRUBdg"><img src="https://s3.ax1x.com/2021/01/20/sRUBdg.png" alt="sRUBdg.png" style="zoom: 67%;" /></a></p>
@@ -81,13 +75,9 @@
 <h3 id="1-2-注释"><a href="#1-2-注释" class="headerlink" title="1.2 注释"></a>1.2 注释</h3><p><strong>作用</strong>：在代码中加一些说明和注释，方便自己或其他程序员阅读代码</p>
 <p><strong>两种格式</strong></p>
 <p>1.<strong>单行注释</strong>： //描述信息</p>
-<ul>
-<li>通常放在一行代码的上方，或者一条语句的末尾，对该行代码说明</li>
-</ul>
+<p>:artificial_satellite:   通常放在一行代码的上方，或者一条语句的末尾，对该行代码说明</p>
 <p>2.<strong>多行注释</strong>：/ * 描述信息 * /</p>
-<ul>
-<li>通常放在一段代码的上方，对该段代码做整体说明</li>
-</ul>
+<p>:athletic_shoe:   通常放在一段代码的上方，对该段代码做整体说明</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">提示：编译器在编译代码时，会忽略注释内容</span><br></pre></td></tr></table></figure>
 
 <h6 id="具体操作此处省略。。。。。。。。"><a href="#具体操作此处省略。。。。。。。。" class="headerlink" title="具体操作此处省略。。。。。。。。"></a>具体操作此处省略。。。。。。。。</h6><h3 id="1-3-变量"><a href="#1-3-变量" class="headerlink" title="1.3 变量"></a>1.3 变量</h3><p><strong>作用</strong>：给一段指定的内存空间起名，方便操作这段内容</p>
@@ -100,15 +90,11 @@
 <p>1.<strong>#define</strong>宏常量：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define 常量名 常量值</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li><strong>通常在文件上方定义，</strong>表示一个常量</li>
-</ul>
+<p>:balance_scale:   <strong>​通常在文件上方定义，表示一个常量</strong></p>
 <p>2.<strong>const</strong>修饰的变量 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const 数据类型 常量名 &#x3D; 常量值</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li><strong>通常在变量定义前加关键字const，修饰该变量为常量，不可修改</strong>（const修饰的变量也称为常量）</li>
-</ul>
+<p>:business_suit_levitating:   <strong>通常在变量定义前加关键字const，修饰该变量为常量，不可修改</strong>（const修饰的变量也称为常量）</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.宏常量</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> day 7</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;一周里总共有&quot;</span>&lt;&lt;day&lt;&lt;<span class="string">&quot;天&quot;</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="comment">//day = 8;  //报错，宏常量不可以修改</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.const修饰变量</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> month = <span class="number">12</span>；</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;一年里总共有&quot;</span>&lt;&lt;month&lt;&lt;<span class="string">&quot;个月份&quot;</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="comment">//month = 24;   //报错，常量不可以修改</span></span><br><span class="line"></span><br><span class="line">system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -119,32 +105,20 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">提示：在给变量或者常量起名的时候，不要使用C++关键字，否则会产生歧义而出错</span><br><span class="line">如：int int &#x3D; 10；</span><br><span class="line">&#x2F;&#x2F;本义想定义名为int的整型变量，但该名称与int关键字相同会出错</span><br></pre></td></tr></table></figure>
 
 <h3 id="1-6标识符命名规则"><a href="#1-6标识符命名规则" class="headerlink" title="1.6标识符命名规则"></a>1.6标识符命名规则</h3><p><strong>作用</strong>：C++规定给标识符（变量、常量）命名时，有一套自己的规则</p>
-<ul>
-<li><p>标识符不能是关键字</p>
-</li>
-<li><p>标识符只能由字母、数字、下划线组成</p>
-</li>
-<li><p>第一个字符必须为字母或下划线</p>
-</li>
-<li><p>标识符中字母区分大小写</p>
-</li>
-</ul>
+<p>:kissing_smiling_eyes:   标识符不能是关键字</p>
+<p>:slightly_smiling_face:   标识符只能由字母、数字、下划线组成</p>
+<p>:smile:   第一个字符必须为字母或下划线</p>
+<p>:smile_cat:   标识符中字母区分大小写</p>
 <h6 id="建议：给标识符命名时，争取做到见名知意的效果，方便自己和他人的阅读"><a href="#建议：给标识符命名时，争取做到见名知意的效果，方便自己和他人的阅读" class="headerlink" title="建议：给标识符命名时，争取做到见名知意的效果，方便自己和他人的阅读"></a>建议：给标识符命名时，争取做到见名知意的效果，方便自己和他人的阅读</h6><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">如：要表示学上档案中某个学生信息，</span><br><span class="line">建议定义结构体</span><br><span class="line">tpyedef <span class="class"><span class="keyword">struct</span> <span class="title">a</span>&#123;</span></span><br><span class="line">  <span class="keyword">int</span> num;</span><br><span class="line">  <span class="keyword">char</span> name[<span class="number">10</span>];</span><br><span class="line">  ......</span><br><span class="line">&#125;student;</span><br><span class="line">如上代码定义了学生类型的结构体变量，表明存储的是学生信息。</span><br></pre></td></tr></table></figure>
 
 
 
 <h6 id="类同C学习，此处省略"><a href="#类同C学习，此处省略" class="headerlink" title="类同C学习，此处省略"></a>类同C学习，此处省略</h6><p>。。。。。。。。。。。。。。。。。。。。。。。。。。。。</p>
 <h1 id="2-C-核心编程："><a href="#2-C-核心编程：" class="headerlink" title="2.C++核心编程："></a>2.C++核心编程：</h1><h2 id="1-内存分区模型："><a href="#1-内存分区模型：" class="headerlink" title="1.内存分区模型："></a>1.内存分区模型：</h2><p>C++程序在执行时，将内存大小划分为<strong>4个区域</strong></p>
-<ul>
-<li><p>代码区：存放函数的二进制代码，由操作系统进行管理的       </p>
-</li>
-<li><p>全局区：存放全局变量和静态变量以及常量</p>
-</li>
-<li><p>栈区：由编译器自动分配释放，存放函数的参数值，局部变量等</p>
-</li>
-<li><p>堆区：由程序员分配和释放，若程序员不释放，程序结束时由操作系统回收</p>
-</li>
-</ul>
+<p>:smiley:   代码区：存放函数的二进制代码，由操作系统进行管理的       </p>
+<p>:smiling_imp:   全局区：存放全局变量和静态变量以及常量</p>
+<p>:smirk:   栈区：由编译器自动分配释放，存放函数的参数值，局部变量等</p>
+<p>:smirk_cat:   堆区：由程序员分配和释放，若程序员不释放，程序结束时由操作系统回收</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">代码区和全局区在程序运行前即划分，栈区和堆区在程序运行后划分</span><br></pre></td></tr></table></figure>
 
 
@@ -165,16 +139,10 @@
 <p>打印结果：</p>
 <p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sW64yQ"><img src="https://s3.ax1x.com/2021/01/20/sW64yQ.png" alt="sW64yQ.png" style="zoom:150%;" /></a></p>
 <p><strong>总结</strong>：</p>
-<ul>
-<li><p>C++中在程序运行前分为全局区和代码区</p>
-</li>
-<li><p>代码区的特点是共享和只读</p>
-</li>
-<li><p>全局区中存放全局变量、静态变量、常量</p>
-</li>
-<li><p>常量区中存放const修饰地全局变量和字符串常量</p>
-</li>
-</ul>
+<p>:kissing_smiling_eyes:   C++中在程序运行前分为全局区和代码区</p>
+<p>:slightly_smiling_face:   代码区的特点是共享和只读</p>
+<p>:smile:   全局区中存放全局变量、静态变量、常量</p>
+<p>:smile_cat:   常量区中存放const修饰地全局变量和字符串常量</p>
 <p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sW6hQg"><img src="https://s3.ax1x.com/2021/01/20/sW6hQg.png" alt="sW6hQg.png"></a></p>
 <h3 id="1-2程序运行后"><a href="#1-2程序运行后" class="headerlink" title="1.2程序运行后"></a>1.2程序运行后</h3><p><strong>栈区</strong>：</p>
 <p>​         由编译器自动分配释放，存放函数的参数值，局部变量等</p>
@@ -206,7 +174,24 @@
 
 <p>执行结果如下：</p>
 <p><a target="_blank" rel="noopener" href="https://imgchr.com/i/shCvQ0"><img src="https://s3.ax1x.com/2021/01/21/shCvQ0.png" alt="shCvQ0.png" style="zoom:150%;" /></a></p>
+<h2 id="2-引用"><a href="#2-引用" class="headerlink" title="2.引用"></a>2.引用</h2><h3 id="2-1引用的基本使用"><a href="#2-1引用的基本使用" class="headerlink" title="2.1引用的基本使用"></a>2.1引用的基本使用</h3><p><strong>作用：</strong>给变量起别名</p>
+<p><strong>语法：</strong>数据类型  &amp;别名  =  原名</p>
+<h6 id="即两个变量同时指向同一块内存单元，任一变量内容更改都可以引起另一变量更改，类似指针"><a href="#即两个变量同时指向同一块内存单元，任一变量内容更改都可以引起另一变量更改，类似指针" class="headerlink" title="即两个变量同时指向同一块内存单元，任一变量内容更改都可以引起另一变量更改，类似指针"></a>即两个变量同时指向同一块内存单元，任一变量内容更改都可以引起另一变量更改，类似指针</h6><p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> &amp;b = a;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;a = &quot;</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;b = &quot;</span> &lt;&lt; b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    b=<span class="number">100</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;a = &quot;</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;b = &quot;</span> &lt;&lt; b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="2-2引用注意事项"><a href="#2-2引用注意事项" class="headerlink" title="2.2引用注意事项"></a>2.2引用注意事项</h3><p>:smile_cat:   引用必须初始化</p>
+<p>:smiling_imp:   引用在初始化后，不可以改变</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line">    <span class="comment">//int &amp;c; //错误，引用必须初始化</span></span><br><span class="line">    <span class="keyword">int</span> &amp;c = a; <span class="comment">//一旦初始化后，就不可以更改</span></span><br><span class="line">    c = b;    <span class="comment">//这是赋值操作，不是更改引用</span></span><br><span class="line">  </span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;a = &quot;</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;b = &quot;</span> &lt;&lt; b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;c = &quot;</span> &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3引用做函数参数"><a href="#2-3引用做函数参数" class="headerlink" title="2.3引用做函数参数"></a>2.3引用做函数参数</h3><p><strong>作用：</strong>函数传参时，可以利用引用的技术让形参修饰实参</p>
+<p><strong>优点：</strong>可以简化指针修改实参</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.值传递</span></span><br><span class="line"><span class="keyword">void</span> myswap1（<span class="keyword">int</span> a,<span class="keyword">int</span> b）</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.地址传递</span></span><br><span class="line"><span class="keyword">void</span> myswap2（<span class="keyword">int</span>* a,<span class="keyword">int</span>* b）</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> temp =*a;</span><br><span class="line">    *a = *b;</span><br><span class="line">    *b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.引用传递</span></span><br><span class="line"><span class="keyword">void</span> myswap1（<span class="keyword">int</span>&amp; a,<span class="keyword">int</span>&amp; b） </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a =<span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> b =<span class="number">20</span>;</span><br><span class="line">    </span><br><span class="line">    myswap1(a,b);                     <span class="comment">//值传递，形参不会修饰实参的</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;a:&quot;</span> &lt;&lt; a &lt;&lt; <span class="string">&quot;b&quot;</span> &lt;&lt; b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    myswap1(&amp;a,&amp;b);                   <span class="comment">//地址传递，形参会修饰实参的</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;a:&quot;</span> &lt;&lt; a &lt;&lt; <span class="string">&quot;b&quot;</span> &lt;&lt; b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    myswap1(a,b);                     <span class="comment">//引用传递，形参会修饰实参的</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;a:&quot;</span> &lt;&lt; a &lt;&lt; <span class="string">&quot;b&quot;</span> &lt;&lt; b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="总结：通过引用参数产生的效果同按地址传递是一样的，引用的语法更清楚简单"><a href="#总结：通过引用参数产生的效果同按地址传递是一样的，引用的语法更清楚简单" class="headerlink" title="总结：通过引用参数产生的效果同按地址传递是一样的，引用的语法更清楚简单"></a>总结：通过引用参数产生的效果同按地址传递是一样的，引用的语法更清楚简单</h6>
         <p class="suffix-end">__END__</p>
         <div class="suffix-box">
             <div class="suffix-box-left">
